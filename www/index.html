@@ -5,7 +5,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, user-scalable=0" />
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
-        <title>SCHOOL ACCESS</title>  
+        <title>School Access</title>  
     </head>
     <body class="ui-mobile-viewport ui-overlay-a"> 
 
@@ -203,35 +203,34 @@
 
 
 
-        <div data-role="page" id="login" data-theme="a" class="app">
-        <div data-role="header" data-theme="a" id="deviceready"  data-position="fixed"> 
-            <h3>Parents Login</h3>
-        </div>
-  
-        <div data-role="content" data-theme="a">
-            <div class="head" style="text-align:center;">
-                        <img src="css/images/Smartlogo.png" alt="Logo"/>
-                        
+        <!-- <div data-role="page" id="login" data-theme="a" class="app" style="background-color: #FF1814;"> -->
+        <div data-role="page" id="login" data-theme="a" class="app"  style="background-color: #FF1814;">
+        <div data-role="content">
+            <div class="head" style="text-align:center;font-family: "Times New Roman", Times, serif;">
+                        <img src="css/images/round_logo_128x128.png" alt="School Logo"/> 
+                        <div role="main" style="color: #FFF;"><h3> SCHOOLNAME METRIC HIGH SEC SCHOOL </h3> </div>
+                        <div role="main" style="color: #FFF;"><h3> TIRUPPUR </h3> </div>
             </div>
-            <form id="check-user" class="ui-body ui-body-a ui-corner-all" data-ajax="false">
+            <form id="check-user"  data-ajax="false">
+                <div role="main" style="color: #FFF;text-align:center;"> <u> LOGIN HERE </u> </div>
                 <fieldset>
-                    <div data-role="fieldcontain">
-                        <label for="username">Enter your username:</label>
-                        <input type="text" value="" name="username" id="username"/>
+                    <div>
+                        <input type="text" value="" name="username" id="username" placeholder="Username"/>
                     </div>                                 
-                    <div data-role="fieldcontain">                                     
-                        <label for="password">Enter your password:</label>
-                        <input type="password" value="" name="password" id="password"/>
+                    <div>                                     
+                        <input type="password" value="" name="password" id="password" placeholder="Password"/>
                     </div>
-                    <input type="button" data-theme="b" name="submit" id="submit" value="Submit">
+                    <div class="test">
+                    <input type="button" data-theme="b" name="submit" id="submit" value="LOGIN">
+                    </div>  
                 </fieldset>
             </form>
                         
         </div>
-  
-        <div data-theme="a" data-role="footer" data-position="fixed">
-  
+        <div>
+                <p style="text-align:center;"> Powered by www.schoolaccess.in  <img src="css/images/32x32.png" alt="Logo" align="middle"/></p>  
         </div>
+        
         </div> 
         
 
