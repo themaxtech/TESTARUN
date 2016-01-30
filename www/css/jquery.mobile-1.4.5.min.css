@@ -53,12 +53,20 @@ border-radius:5px;
     box-shadow: none;
 } 
 #homepage .ui-header {
-  height: 80px;
-  background-color: #FF1814;
-  color: #FFF;
+  height: 80px; 
   border: none !important; 
+  background-color: #6ECC9D;
+  color: #FFF;    
+
+  -webkit-box-shadow: -5px 0 15px rgba(0,0,0,.20);
+  -moz-box-shadow: -5px 0 15px rgba(0,0,0,.20);
+  box-shadow: -5px 0 15px rgba(0,0,0,.20);
 }
-#homepage .ui-header h1 {
+.mytheme {
+	background-color: #6ECC9D;
+	color: #FFF;
+}
+ #homepage .ui-header h1 {
   font-size:17px;
   text-align: left;
 }
@@ -146,6 +154,7 @@ body .ui-body-c, body .ui-overlay-c {
 .ui-grid-b .ui-block-a, .ui-grid-b .ui-block-b, .ui-grid-b .ui-block-c {
     padding: 1px 10px 1px 10px;    
     }
+
 
 @media all and (max-width: 50em) {
 	.my-breakpoint .ui-block-a, 
