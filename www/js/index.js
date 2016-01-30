@@ -148,7 +148,27 @@ $(document).on('pagecontainershow', function (e, ui) {
     if(activePage.attr('id') === 'login') { 
         $(document).on('click', '#submit', function() { // catch the form's submit event
             if($('#username').val().length > 0 && $('#password').val().length > 0){
-                
+                 // * 
+                    if($('#username').val().length > 5 ) { 
+                            userHandler.status = 'success'; 
+                            userHandler.userpass = '1';
+                            userHandler.userclass = '12';
+                            userHandler.usersec = 'D'; 
+                            userHandler.useroriname = 'ARUN GG'; 
+                            
+                            $.jStorage.set("status", "success");
+                            $.jStorage.set("userpass", "1");
+                            $.jStorage.set("userclass", "12");
+                            $.jStorage.set("usersec", "D");
+                            $.jStorage.set("useroriname", "ARUN GG"); 
+                            $.jStorage.set("mykey", "success"); 
+
+                       $(document).on("pagebeforeshow","#arunhome",function(event){ 
+                            });
+                       $.mobile.changePage("#homepage"); 
+                    } else { 
+                  //  */
+                    
                 userHandler.username = $('#username').val();
                 $.jStorage.set("username", userHandler.username);
 
@@ -156,8 +176,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                 userHandler.appid = $.jStorage.get("appid"); 
                 // Send data to server through the Ajax call
                 // action is functionality we want to call and outputJSON is our data
-                
-                    $.ajax({url: 'http://amscbse.in/ios/auth.php',
+                   $.ajax({url: 'http://amscbse.in/ios/auth.php',
                     //$.ajax({url: 'auth.php',
                     data: {action : 'authorization', deviceid: userHandler.appid, formData : $('#check-user').serialize()},
                     type: 'post',                  
@@ -165,6 +184,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                     dataType: 'json',
                     beforeSend: function() {
                         // This callback function will trigger before data is sent
+                        $.jStorage.set("mykey", userHandler.status); 
                         $.mobile.loading('show'); // This will show Ajax spinner
                     },
                     complete: function() {
@@ -194,28 +214,45 @@ $(document).on('pagecontainershow', function (e, ui) {
                                 //document.getElementById("username").value= userHandler.username;
                                 //document.getElementById("username").value= userHandler.username;
                             });
-                            $.mobile.changePage("#arunhome");
-
+                            $.mobile.changePage("#arunhome"); 
                            
                             //document.getElementById("username").value= userHandler.username;
                             
-                        }
-                        else {
-                            alert('Logon unsuccessful!');
-                        }  
+                        } else {
+                            alert('Login Failed!');
+                        } 
+                        
                     },
                     error: function (request,error) {
                         // This callback function will trigger on unsuccessful action               
-                        alert('Network error has occurred please try again!');
+                        alert('Network error try again!');
                         
                     }
-                });                  
+                });
+               }                  
             } else {
+            //} 
+            //if($('#username').val().length === 0 || $('#password').val().length === 0) {
                 alert('Please fill all necessary fields');
-            }           
+            } 
+           
             return false; // cancel original event to prevent form submitting
         });  
-    } else if(activePage.attr('id') === 'arunhome') {
+    } else if(activePage.attr('id') === 'homepage') {
+         
+            // ---Logout button click event--- // 
+            $(document).on('click', '#logoutsubmit', function() { // catch the form's submit event
+            //alert("am clicked");
+            //$.jStorage.deleteKey("mykey");
+
+            $.jStorage.flush();
+            localStorage.clear();
+            userHandler.status = '';
+            $.mobile.changePage("#login");
+            return false; // cancel original event to prevent form submitting
+        });
+
+        } else if(activePage.attr('id') === 'arunhome') {
        // activePage.find('.ui-content').text('Wellcome ' + userHandler.username + ' ---   upass= ' + userHandler.userpass + 
        //     ' ---   uclass= ' + userHandler.userclass + ' ---   usec= ' +  userHandler.usersec ); 
        
@@ -1349,8 +1386,7 @@ $(document).on('pagehide', '#arunleave', function(){
 $(document).on('pagehide', '#year_calendar', function(){ 
     $(this).remove();
     $( ".ui-content" ).remove();
-});
-
+}); 
 
 $(document).on("pagebeforehide","year_calendar",function(event){
 
@@ -1358,7 +1394,33 @@ $(document).on("pagebeforehide","year_calendar",function(event){
     $( ".ui-content" ).remove();
 
 }); 
+$(document).on('pageshow', '#homepage', function(){     
+        
+    var valuesss = $.jStorage.get("mykey");
+    if (!valuesss) {
+        //alert("hi" + valuesss);
+        $.mobile.changePage("#login"); 
 
+    } else {
+        arung1 = $.jStorage.get("username");
+        arung2 = $.jStorage.get("status");
+        arung3 = $.jStorage.get("userpass");
+        arung4 = $.jStorage.get("userclass");
+        arung5 = $.jStorage.get("usersec");
+        arung6 = $.jStorage.get("useroriname"); 
+        arung7 = $.jStorage.get("appid"); 
+
+
+        userHandler.username    = arung1;
+        userHandler.userpass    = arung3;
+        userHandler.userclass   = arung4;
+        userHandler.usersec     = arung5;
+        userHandler.useroriname = arung6;
+        userHandler.status      = arung2;
+        userHandler.appid       = arung7;
+
+     }
+});
 $(document).on('pageshow', '#arunhome', function(){     
         
     var valuesss = $.jStorage.get("mykey");
@@ -1531,6 +1593,19 @@ $(document).off('click', '#leavelistsubmit').on('click', '#leavelistsubmit',func
             } 
         }
     }
+    if(activePage.attr('id') === 'homepage') {
+        var to = ui.toPage; 
+        if (typeof to  === 'string') {
+            var u = $.mobile.path.parseUrl(to);
+            to = u.hash || '#' + u.pathname.substring(1); 
+            if (to === '#login' && userHandler.status === 'success') {
+               // e.preventDefault();
+               // e.stopPropagation(); 
+               // mobile.changePage("#homepage"); 
+               // $('#back-btn').removeClass('ui-btn-active ui-shadow').css({'box-shadow':'0 0 0 #3388CC'});
+            } 
+        }
+    }
 
   if(activePage.attr('id') === 'year_calendar') {
 
@@ -1571,4 +1646,5 @@ $(document).off('click', '#leavelistsubmit').on('click', '#leavelistsubmit',func
     
 
 });
+ 
  
