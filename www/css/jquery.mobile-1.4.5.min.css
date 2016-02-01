@@ -52,7 +52,7 @@ border-radius:5px;
     -webkit-box-shadow: none;
     box-shadow: none;
 }  
- #arunhome .ui-header, #year_calendar .ui-header {
+ #arunhome .ui-header, #year_calendar .ui-header, #arunleave .ui-header {
   height: 80px; 
   border: none !important; 
   background-color: #6ECC9D;
@@ -66,7 +66,7 @@ border-radius:5px;
 	background-color: #6ECC9D;
 	color: #FFF;
 }
-#arunhome .ui-header h1, #year_calendar .ui-header h1 {
+#arunhome .ui-header h1, #year_calendar .ui-header h1, #arunleave .ui-header h1 {
   font-size:17px;
   text-align: left 
 }

@@ -298,12 +298,26 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-url='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
-                        "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
-                        "<h2>Year Calendar</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
+                        "<div id='year_calendar' data-role='page' data-theme='a'>" + 
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
+                            " <div data-type='horizontal' class='ui-btn-left'> " +
+                               "  <table>" +
+                                 " <tr>" +
+                                 "   <td>" +
+                                   " <a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" +
+                                    "</td>" +
+                                   "  <td>" +
+                                    "  <h2>Year Calendar</h2> " +  
+                                    " </td>" +
+                                    "</tr>" +
+                                  "</table> " +
+                             "</div>  " +
+                        " </div>" +   
+                        "<div data-role='content'>" + 
+                        "</div><div data-position='fixed'>"+
+                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
 
-                        $.mobile.activePage.after(stud_prof);
+                          $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
                         $.mobile.changePage( "#year_calendar", {transition: "none", reloadPage:false} );
                          function myFunction() { 
@@ -403,8 +417,8 @@ $(document).on('pagecontainershow', function (e, ui) {
                              "</div>  " +
                         " </div>" +   
                         "<div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'>"+
-                        "<p>  &copy;   www.themaxtech.com</p></div></div>"; 
+                        "</div><div data-position='fixed'>"+
+                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
 
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar");
@@ -493,11 +507,26 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
-                        "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
-                        "<h2>Profile</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
+                        "<div id='year_calendar' data-role='page' data-theme='a'>" + 
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
+                            " <div data-type='horizontal' class='ui-btn-left'> " +
+                               "  <table>" +
+                                 " <tr>" +
+                                 "   <td>" +
+                                   " <a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" +
+                                    "</td>" +
+                                   "  <td>" +
+                                    "  <h2>Profile</h2> " +  
+                                    " </td>" +
+                                    "</tr>" +
+                                  "</table> " +
+                             "</div>  " +
+                        " </div>" +   
+                        "<div data-role='content'>" + 
+                        "</div><div data-position='fixed'>"+
+                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
 
+  
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
                         $.mobile.changePage( "#year_calendar", {transition: "none", reloadPage:false} );
@@ -597,11 +626,27 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
-                        "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
-                        "<h2>Home Work</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
+                        "<div id='year_calendar' data-role='page' data-theme='a'>" +
 
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
+                            " <div data-type='horizontal' class='ui-btn-left'> " +
+                               "  <table>" +
+                                 " <tr>" +
+                                 "   <td>" +
+                                   " <a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" +
+                                    "</td>" +
+                                   "  <td>" +
+                                    "  <h2>Home Work</h2> " +  
+                                    " </td>" +
+                                    "</tr>" +
+                                  "</table> " +
+                             "</div>  " +
+                        " </div>" +   
+                        "<div data-role='content'>" + 
+                        "</div><div data-position='fixed'>"+
+                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
+
+ 
                         //$.mobile.activePage.after(stud_prof);
                         $.mobile.changePage("#year_calendar"); 
                         $.mobile.changePage( "#year_calendar", {transition: "none", reloadPage:false} );
@@ -704,11 +749,26 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
-                        "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
-                        "<h2> Food Menu</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
+                        "<div id='year_calendar' data-role='page' data-theme='a'>" +  
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
+                            " <div data-type='horizontal' class='ui-btn-left'> " +
+                               "  <table>" +
+                                 " <tr>" +
+                                 "   <td>" +
+                                   " <a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" +
+                                    "</td>" +
+                                   "  <td>" +
+                                    "  <h2>Food Menu</h2> " +  
+                                    " </td>" +
+                                    "</tr>" +
+                                  "</table> " +
+                             "</div>  " +
+                        " </div>" +   
+                        "<div data-role='content'>" + 
+                        "</div><div data-position='fixed'>"+
+                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
 
+ 
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
                         $.mobile.changePage( "#year_calendar", {transition: "none", reloadPage:false} );
@@ -792,11 +852,26 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
-                        "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
-                        "<h2>Leave Status</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
 
+                        "<div id='year_calendar' data-role='page' data-theme='a'>" +  
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
+                            " <div data-type='horizontal' class='ui-btn-left'> " +
+                               "  <table>" +
+                                 " <tr>" +
+                                 "   <td>" +
+                                   " <a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" +
+                                    "</td>" +
+                                   "  <td>" +
+                                    "  <h2>Leave Status</h2> " +  
+                                    " </td>" +
+                                    "</tr>" +
+                                  "</table> " +
+                             "</div>  " +
+                        " </div>" +   
+                        "<div data-role='content'>" + 
+                        "</div><div data-position='fixed'>"+
+                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
+ 
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
                         $.mobile.changePage( "#year_calendar", {transition: "none", reloadPage:false} );
@@ -876,11 +951,26 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
-                        "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
-                        "<h2>Report Card</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
 
+                        "<div id='year_calendar' data-role='page' data-theme='a'>" +  
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
+                            " <div data-type='horizontal' class='ui-btn-left'> " +
+                               "  <table>" +
+                                 " <tr>" +
+                                 "   <td>" +
+                                   " <a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" +
+                                    "</td>" +
+                                   "  <td>" +
+                                    "  <h2> Report Card </h2> " +  
+                                    " </td>" +
+                                    "</tr>" +
+                                  "</table> " +
+                             "</div>  " +
+                        " </div>" +   
+                        "<div data-role='content'>" + 
+                        "</div><div data-position='fixed'>"+
+                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
+  
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
                          $.mobile.changePage( "#year_calendar", {transition: "none", reloadPage:false} );
@@ -1050,10 +1140,25 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
-                        "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
-                        "<h2>Exam Time Table</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
+                        "<div id='year_calendar' data-role='page' data-theme='a'>" +  
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
+                            " <div data-type='horizontal' class='ui-btn-left'> " +
+                               "  <table>" +
+                                 " <tr>" +
+                                 "   <td>" +
+                                   " <a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" +
+                                    "</td>" +
+                                   "  <td>" +
+                                    "  <h2> Exam Time Table</h2> " +  
+                                    " </td>" +
+                                    "</tr>" +
+                                  "</table> " +
+                             "</div>  " +
+                        " </div>" +   
+                        "<div data-role='content'>" + 
+                        "</div><div data-position='fixed'>"+
+                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
+  
 
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -1160,10 +1265,26 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
-                        "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
-                        "<h2>Class Time Table</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
+                         "<div id='year_calendar' data-role='page' data-theme='a'>" +  
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
+                            " <div data-type='horizontal' class='ui-btn-left'> " +
+                               "  <table>" +
+                                 " <tr>" +
+                                 "   <td>" +
+                                   " <a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" +
+                                    "</td>" +
+                                   "  <td>" +
+                                    "  <h2>Class Time Table</h2> " +  
+                                    " </td>" +
+                                    "</tr>" +
+                                  "</table> " +
+                             "</div>  " +
+                        " </div>" +   
+                        "<div data-role='content'>" + 
+                        "</div><div data-position='fixed'>"+
+                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
+  
+   
 
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -1256,10 +1377,24 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
-                        "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
-                        "<h2>Image Gallery</h2></div><div data-role='content'>" + 
-                        "</div><div data-role='footer' data-position='fixed'><p>  &copy;   www.themaxtech.com</p></div></div>"; 
+                         "<div id='year_calendar' data-role='page' data-theme='a'>" +  
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
+                            " <div data-type='horizontal' class='ui-btn-left'> " +
+                               "  <table>" +
+                                 " <tr>" +
+                                 "   <td>" +
+                                   " <a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" +
+                                    "</td>" +
+                                   "  <td>" +
+                                    "  <h2>Image Gallery</h2> " +  
+                                    " </td>" +
+                                    "</tr>" +
+                                  "</table> " +
+                             "</div>  " +
+                        " </div>" +   
+                        "<div data-role='content'>" + 
+                        "</div><div data-position='fixed'>"+
+                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
 
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -1305,7 +1440,7 @@ $(document).on('pagecontainershow', function (e, ui) {
             // ---Logout button click event--- //
 
             $(document).on('click', '#logoutsubmit', function() { // catch the form's submit event
-            alert("am clicked");
+            //alert("am clicked");
             $.jStorage.deleteKey("mykey"); 
 
             $.jStorage.flush();

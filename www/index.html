@@ -432,9 +432,19 @@
 
 
     <div data-url="arunleave" id="arunleave" data-role="page" data-theme="a">
-        <div data-role="header" data-position="fixed">
-            <a href="#arunhome" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all"></a>
-            <h2>Leave Request</h2>
+        <div data-role="header" data-position='fixed'  data-tap-toggle='false' data-transition='none'>
+            <div data-type='horizontal' class='ui-btn-left'> 
+                             <table>
+                                 <tr>
+                                   <td>
+                                   <a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>
+                                   </td>
+                                    <td>
+                                    <h2>Leave Request</h2>
+                                    </td>
+                                  </tr>
+                             </table> 
+            </div> 
         </div><!-- /header -->
         <div role="main"> 
 
@@ -496,11 +506,10 @@
                  </fieldset>
 
             </form>  
-                
+         <p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p>
+
         </div>
-        <div data-role="footer" data-position="fixed">
-            <p>  &copy;   www.themaxtech.com</p>
-        </div>
+         
     </div> 
 
     <div data-url="test" id="test" data-role="page" data-theme="a">
