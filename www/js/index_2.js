@@ -25,7 +25,7 @@ $.jStorage.set("userclass", '');
 $.jStorage.set("usersec", '');
 $.jStorage.set("useroriname", '');
 */
-
+ 
 
 var arung1 = '';
 var arung2 = '';
@@ -49,7 +49,7 @@ var arung7 = '';
 var app = {
     // Application Constructor
     initialize: function() {
-        this.bindEvents();
+        this.bindEvents(); 
     },
     // Bind Event Listeners
     //
@@ -140,34 +140,13 @@ var app = {
             snd.play();
         }
     }
-};
-
+}; 
 
 $(document).on('pagecontainershow', function (e, ui) {
     var activePage = $(':mobile-pagecontainer').pagecontainer('getActivePage');
     if(activePage.attr('id') === 'login') { 
         $(document).on('click', '#submit', function() { // catch the form's submit event
-            if($('#username').val().length > 0 && $('#password').val().length > 0){
-                 // * 
-                    if($('#username').val().length > 15 ) { 
-                            userHandler.status = 'success'; 
-                            userHandler.userpass = '1';
-                            userHandler.userclass = '12';
-                            userHandler.usersec = 'D'; 
-                            userHandler.useroriname = 'ARUN GG'; 
-                            
-                            $.jStorage.set("status", "success");
-                            $.jStorage.set("userpass", "1");
-                            $.jStorage.set("userclass", "12");
-                            $.jStorage.set("usersec", "D");
-                            $.jStorage.set("useroriname", "ARUN GG"); 
-                            $.jStorage.set("mykey", "success"); 
-
-                       $(document).on("pagebeforeshow","#arunhome",function(event){ 
-                            });
-                       $.mobile.changePage("#arunhome"); 
-                    } else { 
-                  //  */
+            if($('#username').val().length > 0 && $('#password').val().length > 0){ 
                     
                 userHandler.username = $('#username').val();
                 $.jStorage.set("username", userHandler.username);
@@ -229,7 +208,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         
                     }
                 });
-               }                  
+                                  
             } else {
             //} 
             //if($('#username').val().length === 0 || $('#password').val().length === 0) {
@@ -243,13 +222,7 @@ $(document).on('pagecontainershow', function (e, ui) {
             // ---Logout button click event--- // 
             $(document).on('click', '#logoutsubmit', function() { // catch the form's submit event
             //alert("am clicked");
-            //$.jStorage.deleteKey("mykey");
-
-            $.jStorage.flush();
-            localStorage.clear();
-            userHandler.status = '';
-            $.mobile.changePage("#login");
-            return false; // cancel original event to prevent form submitting
+            //$.jStorage.deleteKey("mykey"); 
         });
 
         } else if(activePage.attr('id') === 'arunhome') {
@@ -386,23 +359,10 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'> " +
-
-                        "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
-                            " <div data-type='horizontal' class='ui-btn-left'> " +
-                               "  <table>" +
-                                 " <tr>" +
-                                 "   <td>" +
-                                   " <a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" +
-                                    "</td>" +
-                                   "  <td>" +
-                                    "  <h2>Message</h2> " +  
-                                    " </td>" +
-                                    "</tr>" +
-                                  "</table> " +
-                             "</div>  " +
-                        " </div>" +   
-                        "<div data-role='content'>" + 
+                        "<div id='year_calendar' data-role='page'>
+                        <div data-role='header' class='mytheme' data-position='fixed'>" + 
+                        "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
+                        "<h2>Message</h2></div><div data-role='content'>" + 
                         "</div><div data-role='footer' data-position='fixed'>"+
                         "<p>  &copy;   www.themaxtech.com</p></div></div>"; 
 
@@ -1305,8 +1265,8 @@ $(document).on('pagecontainershow', function (e, ui) {
             // ---Logout button click event--- //
 
             $(document).on('click', '#logoutsubmit', function() { // catch the form's submit event
-            alert("am clicked");
-            $.jStorage.deleteKey("mykey"); 
+            //alert("am clicked");
+            //$.jStorage.deleteKey("mykey");
 
             $.jStorage.flush();
             localStorage.clear();
@@ -1591,32 +1551,30 @@ $(document).off('click', '#leavelistsubmit').on('click', '#leavelistsubmit',func
     
     if(activePage.attr('id') === 'arunhome') {
         var to = ui.toPage;
-         
         if (typeof to  === 'string') {
             var u = $.mobile.path.parseUrl(to);
             to = u.hash || '#' + u.pathname.substring(1);
               
             if (to === '#login' && userHandler.status === 'success') {
                 alert('You cant open a login page while youre still logged on!');
-                //e.preventDefault();
-                //e.stopPropagation(); 
-                //mobile.changePage("#arunhome"); 
- 
+                e.preventDefault();
+                e.stopPropagation(); 
+                mobile.changePage("#arunhome"); 
                 //$.mobile.changePage( "#arunhome", {transition: "none", reloadPage:false} );
                 // remove active status on a button if a transition was triggered with a button
-                //$('#back-btn').removeClass('ui-btn-active ui-shadow').css({'box-shadow':'0 0 0 #3388CC'});
+                $('#back-btn').removeClass('ui-btn-active ui-shadow').css({'box-shadow':'0 0 0 #3388CC'});
             } 
         }
     }
     if(activePage.attr('id') === 'homepage') {
-        var to = ui.toPage; 
+        var to = ui.toPage;  
+
         if (typeof to  === 'string') {
             var u = $.mobile.path.parseUrl(to);
             to = u.hash || '#' + u.pathname.substring(1); 
             if (to === '#login' && userHandler.status === 'success') {
                // e.preventDefault();
                // e.stopPropagation(); 
-            // if (e.originalEvent.defaultPrevented) return; 
                // mobile.changePage("#homepage"); 
                // $('#back-btn').removeClass('ui-btn-active ui-shadow').css({'box-shadow':'0 0 0 #3388CC'});
             } 
