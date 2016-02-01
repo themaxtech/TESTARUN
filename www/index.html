@@ -11,19 +11,52 @@
     </head>
     <body class="ui-mobile-viewport ui-overlay-a"> 
      
-     <div style="min-height: 700px;" class="ui-page ui-page-theme-a" tabindex="0" data-url="homepage" id="homepage" class="current" data-role="page">
+     <div style="min-height: 700px;" class="ui-page ui-page-theme-a" tabindex="0" data-url="arunhome" id="arunhome" class="current" data-role="page">
          <div data-role="header" data-position="fixed"  data-tap-toggle="false" data-transition="none" >
-            <!-- <a href="#defaultpanel" data-role="button" data-inline="true" data-icon="bars"> </a> --> 
-             <h1>School Name Matric High Sec School <br> - Tirupur </h1> 
-           <!--  <a href="#homepage" data-icon="bars" data-role="button" class="ui-btn ui-icon-back ui-btn-icon-notext ui-btn-right ui-corner-all"></a> 
-             <a href="#homepage" class="ui-btn ui-icon-back ui-btn-icon-notext ui-btn-right ui-corner-all"></a> --> 
+              
+            <div data-type="horizontal" class="ui-btn-left"> 
+                <table>
+                 <tr>
+                   <td>
+                   <a href="#defaultpanel" data-role="button" data-inline="true" data-icon="bars" class="transparentButton ui-alt-icon ui-corner-all ui-nodisc-icon" data-iconpos="notext" id="headmenu">Menu</a>   
+                   </td>
+                    <td>
+                     <h1>School Name Matric High Sec School <br> - Tirupur </h1>   
+                    </td>
+                   </tr>
+                 </table> 
+            </div> 
+
         </div><!-- /header -->  
+         
+        <div data-role="panel" id="defaultpanel" data-display="overlay" data-position="left" data-theme="a">
+            
+            <div> 
+            <h4>Settings</h4>
+            </div> 
+             <ul data-role="listview"> 
+                <li class="ui-last-child"> 
+                     <a class="ui-btn ui-btn-icon-right ui-icon-back arunpost" type="button" name="logoutsubmit" id="logoutsubmit" value="Submit"> 
+                       Logout  
+                    </a>  
+                </li>  
+
+                    
+            </ul>
+             
+        </div>
         <div role="content" data-iscroll class="mytheme">
              <fieldset class="ui-grid-b">
                 <div class="ui-block-a"> 
-                    <a data-role="button"> 
+                    <a data-role="button"  name="homesubmit" id="homesubmit" value="Submit" > 
                             <img alt="Inbox" src="css/icons/android/drawable-xhdpi/ic_email_white_24dp.png" width="50" height="50"/>  <br/>
                             <div class="custom-button"> Message Inbox   </div> 
+                            <form id="check-mess" data-ajax="false">
+                                <input type="hidden" value="" name="usernameb" id="usernameb"/>
+                                <input type="hidden" value="" name="passwordb" id="passwordb"/>  
+                                <input type="hidden" value="" name="classb" id="classb"/>  
+                                <input type="hidden" value="" name="secb" id="secb"/>  
+                            </form> 
                         </a>  
                 </div>
                 <div class="ui-block-b"> 
@@ -35,57 +68,91 @@
                         </a>
                 </div>
                 <div class="ui-block-c"> 
-                    <a data-role="button"> 
+                    <a data-role="button" name="foodsubmit" id="foodsubmit" value="Submit" > 
                     <img alt="Food" src="css/icons/android/drawable-xhdpi/ic_local_dining_white_24dp.png" width="50" height="50" /><br/>
                     <div class="custom-button">   Food Menu  </div> 
+                    <form id="check-food" data-ajax="false">
+                        <input type="hidden" value="" name="usernamef" id="usernamef"/>
+                        <input type="hidden" value="" name="passwordf" id="passwordf"/>  
+                        <input type="hidden" value="" name="classf" id="classf"/>  
+                        <input type="hidden" value="" name="secf" id="secf"/>  
+                    </form>
                     </a>                      
                 </div>
             </fieldset>
 
             <fieldset class="ui-grid-b">
                 <div class="ui-block-a">
-                    <a data-role="button"> 
+                    <a data-role="button" name="homeworksubmit" id="homeworksubmit" value="Submit" > 
                     <img alt="Homework" src="css/icons/android/drawable-xhdpi/ic_assignment_white_24dp.png" width="50" height="50"/>
                     <br/>
                     <div class="custom-button">    Home Work  </div>
+                    <form id="check-homework" data-ajax="false">
+                        <input type="hidden" value="" name="usernamee" id="usernamee"/>
+                        <input type="hidden" value="" name="passworde" id="passworde"/>  
+                        <input type="hidden" value="" name="classe" id="classe"/>  
+                        <input type="hidden" value="" name="sece" id="sece"/>  
+                    </form> 
                     </a>  
                 </div>
                 <div class="ui-block-b"> 
-                    <a data-role="button"> 
+                    <a data-role="button" href="#arunleave" > 
                     <img alt="Leave Req" src="css/icons/android/drawable-xhdpi/ic_email_white_24dp.png" width="50" height="50">
                     <br/>
                     <div class="custom-button">   Apply Leave  </div> 
                     </a>
                 </div>
                 <div class="ui-block-c"> 
-                    <a data-role="button"> 
+                    <a data-role="button" name="reportsubmit" id="reportsubmit" value="Submit" > 
                     <img alt="Marks" src="css/icons/android/drawable-xhdpi/ic_school_white_24dp.png" width="50" height="50" /> 
                     <br/>
                     <div class="custom-button">  Report Card  </div> 
+                    <form id="check-report" data-ajax="false">
+                        <input type="hidden" value="" name="usernameh" id="usernameh"/>
+                        <input type="hidden" value="" name="passwordh" id="passwordh"/>  
+                        <input type="hidden" value="" name="classh" id="classh"/>  
+                        <input type="hidden" value="" name="sech" id="sech"/>  
+                    </form>
                     </a>                      
                 </div>
             </fieldset>
 
             <fieldset class="ui-grid-b">
                 <div class="ui-block-a">
-                    <a data-role="button"> 
+                    <a data-role="button" name="examsubmit" id="examsubmit" value="Submit" > 
                     <img alt="Exam Time" src="css/icons/android/drawable-xhdpi/ic_event_note_white_24dp.png" width="50" height="50"/>
                     <br/>
                     <div class="custom-button">   Exam Schedule  </div> 
+                    <form id="check-exam" data-ajax="false">
+                        <input type="hidden" value="" name="usernamei" id="usernamei"/>
+                        <input type="hidden" value="" name="passwordi" id="passwordi"/>  
+                        <input type="hidden" value="" name="classi" id="classi"/>  
+                        <input type="hidden" value="" name="seci" id="seci"/>  
+                    </form> 
                     </a>  
                 </div>
                 <div class="ui-block-b"> 
-                    <a data-role="button"> 
+                    <a data-role="button" name="timesubmit" id="timesubmit" value="Submit"> 
                     <img alt="Class Time" src="css/icons/android/drawable-xhdpi/ic_access_time_white_24dp.png" width="50" height="50">
                     <br/>
                     <div class="custom-button">   Class Timetable  </div> 
+                     <form id="check-time" data-ajax="false">
+                        <input type="hidden" value="" name="usernamej" id="usernamej"/>
+                        <input type="hidden" value="" name="passwordj" id="passwordj"/>  
+                        <input type="hidden" value="" name="classj" id="classj"/>  
+                        <input type="hidden" value="" name="secj" id="secj"/>  
+                    </form> 
                     </a>
                 </div>
                 <div class="ui-block-c"> 
-                    <a data-role="button"> 
+                    <a data-role="button" name="submit" id="submit" value="Submit" > 
                     <img alt="Calender" src="css/icons/android/drawable-xhdpi/ic_assignment_white_24dp.png" width="50" height="50" />
                     <br/>
                     <div class="custom-button">   School Calender  </div> 
+                    <form id="check-cal" data-ajax="false">
+                        <input type="hidden" value="" name="usernamea" id="usernamea"/>
+                         <input type="hidden" value="" name="passworda" id="passworda"/>  
+                    </form> 
                     </a>                      
                 </div>
             </fieldset>
@@ -99,17 +166,21 @@
                     </a>  
                 </div>
                 <div class="ui-block-b"> 
-                    <a data-role="button"> 
+                    <a data-role="button" href="gallery.html" rel="external" > 
                     <img alt="Events" src="css/icons/android/drawable-xhdpi/ic_photo_library_white_24dp.png" width="50" height="50">
                     <br/>
                     <div class="custom-button">    Events Gallery  </div> 
                     </a>
                 </div>
                 <div class="ui-block-c"> 
-                    <a data-role="button"> 
+                    <a data-role="button" name="prosubmit" id="prosubmit" value="Submit"> 
                     <img alt="Profile" src="css/icons/android/drawable-xhdpi/ic_person_white_24dp.png" width="50" height="50" /> 
                     <br/>
                     <div class="custom-button">   My Child Profile  </div> 
+                    <form id="check-pro" data-ajax="false">
+                        <input type="hidden" value="" name="usernamec" id="usernamec"/>
+                        <input type="hidden" value="" name="passwordc" id="passwordc"/>  
+                    </form>
                     </a>                      
                 </div>
             </fieldset>
@@ -135,18 +206,13 @@
                     <br/>
                     <div class="custom-button">  School Bus Tracking  </div> 
                     </a>                      
-                </div>
+                </div> 
             </fieldset>
-        </div>    
-
-        <div role="main">
-            <li class="ui-last-child"> 
-                 <a class="ui-btn ui-btn-icon-right ui-icon-carat-r arunpost" type="button" name="logoutsubmit" id="logoutsubmit" value="Submit" style="color:#220BBA"> 
-                   <h3>Logout </h3>
-                    <p></p>  
-                </a>  
-            </li>  
-        </div>    
+            <fieldset class="ui-grid-b">
+                    <br>
+                 <p style="text-align:center;"> Powered by www.schoolaccess.in  <img src="css/images/32x32.png" alt="Logo" align="middle"/></p>
+            <fieldset>    
+        </div>   
     </div>
  
  <!-- <div data-role="page" id="login" data-theme="a" class="app" style="background-color: #FF1814;"> -->
@@ -176,7 +242,7 @@
         </div>
 
      <!--   <div style="min-height: 700px;" class="ui-page ui-page-theme-a"  tabindex="0" data-url="arunhome" id="arunhome" class="current" data-role="page">   -->
-      <div data-url="arunhome" id="arunhome" data-role="page" data-theme="a"> 
+      <div data-url="homepage" id="homepage" data-role="page" data-theme="a"> 
         <div class="ui-header ui-bar-a" role="banner" data-role="header" data-theme="a" data-position="fixed">  
         <h1 aria-level="1" role="heading" class="ui-title"> ANUGRAHA </h1>
         </div><!-- /header --> 

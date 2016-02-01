@@ -25,7 +25,7 @@ $.jStorage.set("userclass", '');
 $.jStorage.set("usersec", '');
 $.jStorage.set("useroriname", '');
 */
-
+ 
 
 var arung1 = '';
 var arung2 = '';
@@ -49,7 +49,7 @@ var arung7 = '';
 var app = {
     // Application Constructor
     initialize: function() {
-        this.bindEvents();
+        this.bindEvents(); 
     },
     // Bind Event Listeners
     //
@@ -149,7 +149,7 @@ $(document).on('pagecontainershow', function (e, ui) {
         $(document).on('click', '#submit', function() { // catch the form's submit event
             if($('#username').val().length > 0 && $('#password').val().length > 0){
                  // * 
-                    if($('#username').val().length > 5 ) { 
+                    if($('#username').val().length > 10 ) { 
                             userHandler.status = 'success'; 
                             userHandler.userpass = '1';
                             userHandler.userclass = '12';
@@ -386,7 +386,8 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'><div data-role='header' data-position='fixed'>" + 
+                        "<div id='year_calendar' data-role='page'>
+                        <div data-role='header' class='mytheme' data-position='fixed'>" + 
                         "<a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" + 
                         "<h2>Message</h2></div><div data-role='content'>" + 
                         "</div><div data-role='footer' data-position='fixed'>"+
@@ -1577,7 +1578,6 @@ $(document).off('click', '#leavelistsubmit').on('click', '#leavelistsubmit',func
     
     if(activePage.attr('id') === 'arunhome') {
         var to = ui.toPage;
-         
         if (typeof to  === 'string') {
             var u = $.mobile.path.parseUrl(to);
             to = u.hash || '#' + u.pathname.substring(1);
@@ -1595,6 +1595,11 @@ $(document).off('click', '#leavelistsubmit').on('click', '#leavelistsubmit',func
     }
     if(activePage.attr('id') === 'homepage') {
         var to = ui.toPage; 
+         $.jStorage.flush();
+            localStorage.clear();
+            userHandler.status = '';
+            $.mobile.changePage("#login"); 
+
         if (typeof to  === 'string') {
             var u = $.mobile.path.parseUrl(to);
             to = u.hash || '#' + u.pathname.substring(1); 

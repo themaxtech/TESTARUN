@@ -51,30 +51,31 @@ border-radius:5px;
     border: 0 !important;
     -webkit-box-shadow: none;
     box-shadow: none;
-} 
-#homepage .ui-header {
+}  
+ #arunhome .ui-header, #year_calendar .ui-header {
   height: 80px; 
   border: none !important; 
   background-color: #6ECC9D;
-  color: #FFF;    
-
-  -webkit-box-shadow: -5px 0 15px rgba(0,0,0,.20);
-  -moz-box-shadow: -5px 0 15px rgba(0,0,0,.20);
-  box-shadow: -5px 0 15px rgba(0,0,0,.20);
+  color: #FFF;
+	/* box-shadow */
+	 -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
+	 -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+	 box-shadow: rgba(0,0,0,0.8) 0 0 10px; 
 }
 .mytheme {
 	background-color: #6ECC9D;
 	color: #FFF;
 }
- #homepage .ui-header h1 {
+#arunhome .ui-header h1, #year_calendar .ui-header h1 {
   font-size:17px;
-  text-align: left;
+  text-align: left 
 }
 
 .ui-title {
     margin: 0.6em 10% 0.8em 5% !important;
 }
-
+.ui-footer {
+}
 .ui-header {
   height:200px; /* any height */
   background-image:url(images/round_logo_64x64.png);
@@ -154,6 +155,15 @@ body .ui-body-c, body .ui-overlay-c {
 .ui-grid-b .ui-block-a, .ui-grid-b .ui-block-b, .ui-grid-b .ui-block-c {
     padding: 1px 10px 1px 10px;    
     }
+
+html .ui-icon-arun-exit {
+     background-image: url(icons/android/drawable-xhdpi/ic_power_settings_new_black_24dp.png) !important; 
+     background-color: none;
+    border: none;
+    box-shadow: none;
+    background-repeat: no-repeat;
+
+}
 
 
 @media all and (max-width: 50em) {
