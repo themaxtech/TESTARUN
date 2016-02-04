@@ -7,6 +7,40 @@
     text-shadow: none;
 }
 
+#arunhome .ui-header h1, #year_calendar .ui-header h1, #arunleave .ui-header h1, #themesetting .ui-header h1 {
+  font-size:17px;
+  text-align: left 
+}
+.ui-bar-f {
+    /* color: red;
+    background-color: yellow; 
+
+    */ 
+  height:80px;  
+  background-image:url(images/round_logo_64x64.png);
+  background-repeat:no-repeat;
+  background-position:right 10px center; 
+  border: none; 
+  background-color: #6ECC9D;
+  color: #FFF; 
+	
+	-webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px; 
+	-moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+	box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+        
+}
+
+.ui-body-f {
+    font-weight: bold;
+    color: red;
+    background-color: green;
+}
+
+.ui-page-theme-f {
+    font-weight: bold;
+    background-color: #6ECC9D;
+}
+
 input#username{
 background-image:url(images/ic_action_2.png);
 background-repeat:no-repeat;
@@ -52,12 +86,13 @@ border-radius:5px;
     -webkit-box-shadow: none;
     box-shadow: none;
 }  
- #arunhome .ui-header, #year_calendar .ui-header, #arunleave .ui-header {
+/*
+ #arunhome .ui-header, #year_calendar .ui-header, #arunleave .ui-header, #themesetting .ui-header {
   height: 80px; 
   border: none !important; 
   background-color: #6ECC9D;
   color: #FFF;
-	/* box-shadow */
+	 
 	 -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
 	 -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
 	 box-shadow: rgba(0,0,0,0.8) 0 0 10px; 
@@ -66,10 +101,11 @@ border-radius:5px;
 	background-color: #6ECC9D;
 	color: #FFF;
 }
-#arunhome .ui-header h1, #year_calendar .ui-header h1, #arunleave .ui-header h1 {
+#arunhome .ui-header h1, #year_calendar .ui-header h1, #arunleave .ui-header h1, #themesetting .ui-header h1 {
   font-size:17px;
   text-align: left 
 }
+
 
 .ui-title {
     margin: 0.6em 10% 0.8em 5% !important;
@@ -77,12 +113,12 @@ border-radius:5px;
 .ui-footer {
 }
 .ui-header {
-  height:200px; /* any height */
+  height:200px;  
   background-image:url(images/round_logo_64x64.png);
   background-repeat:no-repeat;
   background-position:right 10px center;
 }
-
+*/
 .grid-container {
     margin-left: auto;
     margin-right: auto;

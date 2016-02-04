@@ -298,8 +298,8 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'>" + 
-                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
+                        "<div id='year_calendar' data-role='page' class='ui-page ui-page-theme-f'>" + 
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'  data-theme='f'>" +
                             " <div data-type='horizontal' class='ui-btn-left'> " +
                                "  <table>" +
                                  " <tr>" +
@@ -400,9 +400,9 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'> " +
-
-                        "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
+                        "<div id='year_calendar' data-role='page' class='ui-page ui-page-theme-f'>" + 
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'  data-theme='f'>" +
+                        
                             " <div data-type='horizontal' class='ui-btn-left'> " +
                                "  <table>" +
                                  " <tr>" +
@@ -429,7 +429,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                             
                              
                              $.each(result.posts, function( i, val ) { 
-                                    output ="<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;'>"+
+                                    output ="<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>"+
                                     "<thead><th style='background-color:#F7AB48;'><b>"+ result.posts[i].status1  +"</b></th></thead><tbody><tr><td style='text-align:justify;'>" + 
                                     result.posts[i].status3 + "</td><tr></tbody></table><br>";
                                     //console.log(output); 
@@ -507,9 +507,9 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'>" + 
-                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
-                            " <div data-type='horizontal' class='ui-btn-left'> " +
+                        "<div id='year_calendar' data-role='page' class='ui-page ui-page-theme-f'>" + 
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'  data-theme='f'>" +
+                           " <div data-type='horizontal' class='ui-btn-left'> " +
                                "  <table>" +
                                  " <tr>" +
                                  "   <td>" +
@@ -537,7 +537,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                             
                           
                              $.each(result.posts, function( i, val ) { 
-                                    output ="<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2' style='width:100%;'>" +
+                                    output ="<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2' style='width:100%;background-color:#F7F9FA;'>" +
                                             "<thead><tr style='background-color:#F7AB48;'><th colspan='2' style='text-align:left;'> Personal Information </th></tr></thead>" +
                                             "<tbody><tr><td> Reg No </td><td> &ensp;" + result.posts[i].post_id + "</td></tr>" + 
                                             "<tr><td> Name </td><td> &ensp;" + result.posts[i].sname + "</td></tr>" +      
@@ -547,13 +547,13 @@ $(document).on('pagecontainershow', function (e, ui) {
                                             "<tr><td> Mother Toungue </td><td> &ensp;" + result.posts[i].language  + "</td></tr>" + 
                                              "<tr><td> Native </td><td> &ensp;" + result.posts[i].native  + "</td></tr></tbody></table> <br>" +
 
-                                            "<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;'>" +
+                                            "<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>" +
                                             "<thead><tr style='background-color:#F7AB48;'><th colspan='2' style='text-align:left;'> Academic Information </th></tr></thead>" +
                                             "<tbody><tr><td> Grade </td><td> &ensp;" + result.posts[i].class + "</td></tr>" +  
                                             "<tr><td> Section </td><td> &ensp;" + result.posts[i].sec  + "</td></tr>" + 
                                             "<tr><td> Batch </td><td> &ensp;" + result.posts[i].batch  + "</td></tr></tbody></table> <br>" + 
 
-                                            "<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;'>" +
+                                            "<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>" +
                                             "<thead><tr style='background-color:#F7AB48;'><th colspan='2' style='text-align:left;'> Contact Information </th></tr></thead>" +
                                             "<tbody><tr><td> Mother's Name </td><td> &ensp;" + result.posts[i].mother  + "</td></tr>" + 
                                             "<tr><td> Father's Name </td><td> &ensp;" + result.posts[i].father  + "</td></tr></tbody></table>";
@@ -626,10 +626,9 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'>" +
-
-                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
-                            " <div data-type='horizontal' class='ui-btn-left'> " +
+                        "<div id='year_calendar' data-role='page' class='ui-page ui-page-theme-f'>" + 
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'  data-theme='f'>" +
+                           " <div data-type='horizontal' class='ui-btn-left'> " +
                                "  <table>" +
                                  " <tr>" +
                                  "   <td>" +
@@ -662,14 +661,14 @@ $(document).on('pagecontainershow', function (e, ui) {
 
                                     if (mychk === 'a') {
 
-                                       newHTMLD.push("<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;'>" + 
+                                       newHTMLD.push("<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>" + 
                                     "<thead><tr><th colspan='2' style='background-color:#F7AB48;'>  Date: " + result.posts[i].hdate  + " </th></tr><tr style='background-color:#90C3D4;'><th>Subject</th><th>Portions</th></tr></thead><tbody>");
  
                                     };
                                 
                                     if ( (mychk != 'a'  &&  result.posts[i].hdate != mychk))  {
 
-                                            output ="</tbody></table><br> <table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;'>" + 
+                                            output ="</tbody></table><br> <table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>" + 
                                             "<thead><tr><th colspan='2' style='background-color:#F7AB48;'> Date: " + result.posts[i].hdate  + " </th></tr><tr style='background-color:#90C3D4;'><th>Subject</th><th>Portions</th></tr></thead><tbody>" +
                                             "<tr><td> &ensp;" + result.posts[i].hsub  + "</td>" + 
                                             "<td> &ensp;" + result.posts[i].hdes + "</td></tr>"; 
@@ -749,9 +748,9 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'>" +  
-                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
-                            " <div data-type='horizontal' class='ui-btn-left'> " +
+                        "<div id='year_calendar' data-role='page' class='ui-page ui-page-theme-f'>" + 
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'  data-theme='f'>" +
+                             " <div data-type='horizontal' class='ui-btn-left'> " +
                                "  <table>" +
                                  " <tr>" +
                                  "   <td>" +
@@ -778,7 +777,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                             var newHTMLD = [];
                             
                               $.each(result.posts, function( i, val ) { 
-                                    output ="<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;'>" +
+                                    output ="<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>" +
                                             "<thead><tr><th colspan='2' style='text-align:left;background-color:#F7AB48;'>" + result.posts[i].hdate + "</th></tr></thead>" + 
                                             "<tbody><tr><td style='background-color:#90C3D4;'> Morning &ensp;</td><td>" + result.posts[i].mor + "</td></tr>" + 
                                             "<tr><td style='background-color:#90C3D4;'> Afternoon &ensp;</td><td>" + result.posts[i].aft  + "</td></tr>" + 
@@ -853,9 +852,9 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "}" +
                         "</style>" +
 
-                        "<div id='year_calendar' data-role='page' data-theme='a'>" +  
-                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
-                            " <div data-type='horizontal' class='ui-btn-left'> " +
+                        "<div id='year_calendar' data-role='page' class='ui-page ui-page-theme-f'>" + 
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'  data-theme='f'>" +
+                           " <div data-type='horizontal' class='ui-btn-left'> " +
                                "  <table>" +
                                  " <tr>" +
                                  "   <td>" +
@@ -882,7 +881,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                             //newHTMLD.push("");
 
                              $.each(result.posts, function( i, val ) { 
-                                    output ="<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2' style='width:100%;'>" + 
+                                    output ="<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2' style='width:100%;background-color:#F7F9FA;'>" + 
                                     "<thead style='background-color:#F7AB48;' > <th style='text-align:left;'><b>" + result.posts[i].ldate  + "</b></th><th style='text-align:left;'><b>" + result.posts[i].lstatus  + "</b></th> </thead>" + 
                                     "<tbody><tr><td colspan='2'>&ensp;&ensp;" + result.posts[i].ldes + "</td></tr></tbody></table><br>";
                                     //console.log(output); 
@@ -952,8 +951,8 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "}" +
                         "</style>" +
 
-                        "<div id='year_calendar' data-role='page' data-theme='a'>" +  
-                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
+                        "<div id='year_calendar' data-role='page' class='ui-page ui-page-theme-f'>" + 
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'  data-theme='f'>" +
                             " <div data-type='horizontal' class='ui-btn-left'> " +
                                "  <table>" +
                                  " <tr>" +
@@ -965,8 +964,8 @@ $(document).on('pagecontainershow', function (e, ui) {
                                     " </td>" +
                                     "</tr>" +
                                   "</table> " +
-                             "</div>  " +
-                        " </div>" +   
+                             "</div> " +
+                        " </div>" +
                         "<div data-role='content'>" + 
                         "</div><div data-position='fixed'>"+
                         "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
@@ -989,7 +988,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
                                     if (mychk === 'hk') {
 
-                                      newHTMLD.push("<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2' style='width:100%;'>" + 
+                                      newHTMLD.push("<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2' style='width:100%;background-color:#F7F9FA;'>" + 
                               "<thead><tr style='background-color:#F7AB48;'><th colspan='2'>" + result.poststr[i].mid + "</th></tr><tr style='background-color:#90C3D4;'><th> Subject </th><th>Grade</th></tr></thead><tbody>");
 
                                     };
@@ -997,7 +996,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                                     if ( (mychk != 'hk'  &&  result.poststr[i].mid != mychk))  {
 
                                              
-                                            output ="</tbody> </br> <table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2' style='width:100%;'>" + 
+                                            output ="</tbody> </br> <table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2' style='width:100%;background-color:#F7F9FA;'>" + 
                                             "<thead><tr style='background-color:#F7AB48;'><th colspan='2'>" + result.poststr[i].mid + "</th></tr><tr style='background-color:#90C3D4;'><th> Subject </th>" +
                                             "<th>Grade</th></tr></thead><tbody><tr><td>" + result.poststr[i].sub1 + "</td><td>" + result.poststr[i].m1 + "</td></tr>" + 
                                             "<tr><td>" + result.poststr[i].sub2 + "</td><td>" + result.poststr[i].m2 + "</td></tr>"+
@@ -1140,9 +1139,9 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                        "<div id='year_calendar' data-role='page' data-theme='a'>" +  
-                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
-                            " <div data-type='horizontal' class='ui-btn-left'> " +
+                        "<div id='year_calendar' data-role='page' class='ui-page ui-page-theme-f'>" + 
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'  data-theme='f'>" +
+                          " <div data-type='horizontal' class='ui-btn-left'> " +
                                "  <table>" +
                                  " <tr>" +
                                  "   <td>" +
@@ -1174,14 +1173,14 @@ $(document).on('pagecontainershow', function (e, ui) {
 
                                     if (mychk === 'aa') {
 
-                                       newHTMLD.push("<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;'>" + 
+                                       newHTMLD.push("<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>" + 
                                     "<thead><tr style='background-color:#F7AB48;'><th colspan='4' style='text-align:left;'>" + result.posts[i].smid  + " </th></tr><tr style='background-color:#90C3D4;'><th>Subject</th><th>Portions</th><th>Date</th><th>Session</th></tr></thead><tbody>");
  
                                     };
                                 
                                     if ( (mychk != 'aa'  &&  result.posts[i].smid != mychk))  {
 
-                                            output ="</tbody></table><br> <table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;'>" + 
+                                            output ="</tbody></table><br> <table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>" + 
                                             "<thead><tr style='background-color:#F7AB48;'><th colspan='4' style='text-align:left;'>" + result.posts[i].smid  + " </th></tr><tr style='background-color:#90C3D4;'><th>Subject</th><th>Portions</th><th>Date</th><th>Session</th></tr></thead><tbody>" +
                                             "<tr><td>" + result.posts[i].subject  + "&ensp;</td>" + 
                                             "<td>" + result.posts[i].portions + "</td>" +
@@ -1265,8 +1264,8 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                         "<div id='year_calendar' data-role='page' data-theme='a'>" +  
-                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
+                        "<div id='year_calendar' data-role='page' class='ui-page ui-page-theme-f'>" + 
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'  data-theme='f'>" +
                             " <div data-type='horizontal' class='ui-btn-left'> " +
                                "  <table>" +
                                  " <tr>" +
@@ -1294,7 +1293,7 @@ $(document).on('pagecontainershow', function (e, ui) {
          
                             var newHTMLD = [];
                             
-                            newHTMLD.push("<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2' style='width:100%;'>" + 
+                            newHTMLD.push("<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2' style='width:100%;background-color:#F7F9FA;'>" + 
                               "<thead  style='background-color:#F7AB48;'><th>TIME/<br>DAY</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></thead> <tbody>");
 
                              $.each(result.posts, function( i, val ) { 
@@ -1377,8 +1376,8 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "    background: #e9e9e9;" +
                         "}" +
                         "</style>" +
-                         "<div id='year_calendar' data-role='page' data-theme='a'>" +  
-                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'>" +
+                        "<div id='year_calendar' data-role='page' class='ui-page ui-page-theme-f'>" + 
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'  data-theme='f'>" +
                             " <div data-type='horizontal' class='ui-btn-left'> " +
                                "  <table>" +
                                  " <tr>" +

@@ -10,30 +10,33 @@
     </head>
     <body class="ui-mobile-viewport ui-overlay-a"> 
      
-     <div style="min-height: 700px;" class="ui-page ui-page-theme-a" tabindex="0" data-url="arunhome" id="arunhome" class="current" data-role="page">
-         <div data-role="header" data-position="fixed"  data-tap-toggle="false" data-transition="none" >
-              
-            <div data-type="horizontal" class="ui-btn-left"> 
+     <div style="min-height: 700px;" class="ui-page ui-page-theme-f" tabindex="0" data-url="arunhome" id="arunhome" class="current" data-role="page">
+           <div data-role="header" data-position="fixed"  data-tap-toggle="false" data-transition="none" data-theme="f" >
+              <div data-type="horizontal" class="ui-btn-left"> 
                 <table>
                  <tr>
                    <td>
                    <a href="#defaultpanel" data-role="button" data-inline="true" data-icon="bars" class="transparentButton ui-alt-icon ui-corner-all ui-nodisc-icon" data-iconpos="notext" id="headmenu">Menu</a>   
                    </td>
                     <td>
-                     <h1>School Name Matric High Sec School <br> - Tirupur </h1>   
+                     <h1> School Name Matric High Sec School <br> - Tirupur  </h1>
                     </td>
                    </tr>
                  </table> 
-            </div> 
-
+            </div>  
         </div><!-- /header -->  
          
-        <div data-role="panel" id="defaultpanel" data-display="overlay" data-position="left" data-theme="a">
+        <div data-role="panel" id="defaultpanel" data-display="overlay" data-position="left">
             
             <div> 
             <h4>Settings</h4>
             </div> 
              <ul data-role="listview"> 
+                <li class="ui-first-child"> 
+                     
+                    <a class="ui-btn ui-btn-icon-right ui-icon-gear" data-role="button" href="#themesetting" >  Theme   </a>
+                </li>     
+
                 <li class="ui-last-child"> 
                      <a class="ui-btn ui-btn-icon-right ui-icon-back arunpost" type="button" name="logoutsubmit" id="logoutsubmit" value="Submit"> 
                        Logout  
@@ -44,7 +47,7 @@
             </ul>
              
         </div>
-        <div role="content" data-iscroll class="mytheme">
+        <div role="content" data-iscroll>
              <fieldset class="ui-grid-b">
                 <div class="ui-block-a"> 
                     <a data-role="button"  name="homesubmit" id="homesubmit" value="Submit" > 
@@ -215,8 +218,8 @@
     </div>
  
  <!-- <div data-role="page" id="login" data-theme="a" class="app" style="background-color: #FF1814;"> -->
-        <div data-role="page" id="login" data-theme="a" class="app">
-        <div data-role="content" class="mytheme">
+        <div data-role="page" id="login" data-theme="f" class="app">
+        <div data-role="content">
             <div class="head" style="text-align:center;">
                         <img src="css/images/round_logo_128x128.png" alt="School Logo"/> 
                         <div role="main" style="color: #FFF;"><h3> SCHOOL NAME METRIC HIGH SEC SCHOOL </h3> </div>
@@ -232,7 +235,7 @@
                         <input type="password" value="" name="password" id="password" placeholder="Password"/>
                     </div>
                     <div class="test" style="width: 60%; margin: 0 auto;" >
-                    <input type="button"name="submit" id="submit" value="LOGIN">
+                    <input type="button" name="submit" id="submit" value="LOGIN">
                     </div>  
                 </fieldset>
             </form>
@@ -428,11 +431,54 @@
             <p> &copy; www.themaxtech.com</p>
     </div>
 
-    </div><!-- /page -->  
+    </div><!-- /page -->   
+    
+    <div data-url="themesetting" id="settingsPage" data-role="page" class="ui-page ui-page-theme-f" >
+      <div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none' data-theme="f">
+            <div data-type='horizontal' class='ui-btn-left'>
+                <table>
+                <tr>
+                <td>
+                    <a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>
+                </td>
+                <td>
+                    <h2>Theme Settings</h2>
+                </td>
+                </tr>
+                </table>
+             </div> 
+        </div>
+        <div data-role="content" id="settingsContent">
+                
+                <fieldset data-role="controlgroup">
+                    
+                    <legend>Choose a theme:</legend>
+                    <input type="radio" name="radio-choice-1" id="radio-choice-1" value="a" />
+                    <label for="radio-choice-1">A</label>
+            
+                    <input type="radio" name="radio-choice-1" id="radio-choice-2" value="b"  />
+                    <label for="radio-choice-2">B</label>
+                    
+                    <input type="radio" name="radio-choice-1" id="radio-choice-3" value="c"  />
+                    <label for="radio-choice-3">C</label>
+                    
+                    <input type="radio" name="radio-choice-1" id="radio-choice-4" value="d" />
+                    <label for="radio-choice-4">D</label>
+                    
+                    <input type="radio" name="radio-choice-1" id="radio-choice-5" value="e" />
+                    <label for="radio-choice-5">E</label>
+                    
+                </fieldset>
+                                
+            </div> 
 
+            <div data-position='fixed'>
+                <p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p>
+            </div>
+    </div>
 
-    <div data-url="arunleave" id="arunleave" data-role="page" data-theme="a">
-        <div data-role="header" data-position='fixed'  data-tap-toggle='false' data-transition='none'>
+    <div data-url="arunleave" id="arunleave" data-role="page" class="ui-page ui-page-theme-f">
+        <div data-role="header" data-position='fixed'  data-tap-toggle='false' data-transition='none' data-theme="f">
             <div data-type='horizontal' class='ui-btn-left'> 
                              <table>
                                  <tr>
@@ -511,136 +557,7 @@
         </div>
          
     </div> 
-
-    <div data-url="test" id="test" data-role="page" data-theme="a">
-        <div data-role="header">
-            <a href="#arunhome" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all"></a>
-            <h2>ARUN Test</h2>
-        </div><!-- /header -->
-        <div role="main">  
-        <div id="result"></div>
-        </div>
-        <div data-role="footer">
-            <p>  &copy;   www.themaxtech.com</p>
-        </div>
-    </div> 
-
-    <div data-url="y_calendar" id="y_calendar" data-role="page" data-theme="a">
-        <div data-role="header" data-position="fixed">
-            <a href="#arunhome" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all"></a>
-            <h2>Year Calendar</h2>
-        </div><!-- /header -->
-        <div role="main">  
-        <div id="result"></div>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <p>  &copy;   www.themaxtech.com</p>
-        </div>
-    </div> 
-
-    <div data-url="message" id="message" data-role="page" data-theme="a">
-        <div data-role="header" data-position="fixed">
-            <a href="#arunhome" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all"></a>
-            <h2>Message</h2>
-        </div><!-- /header -->
-        <div role="main">  
-        <div id="result"></div>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <p>  &copy;   www.themaxtech.com</p>
-        </div>
-    </div> 
-
-    <div data-url="profile" id="profile" data-role="page" data-theme="a">
-        <div data-role="header" data-position="fixed">
-            <a href="#arunhome" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all"></a>
-            <h2>Profile</h2>
-        </div><!-- /header -->
-        <div role="main">  
-        <div id="result"></div>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <p>  &copy;   www.themaxtech.com</p>
-        </div>
-    </div> 
-
-    <div data-url="homework" id="homework" data-role="page" data-theme="a">
-        <div data-role="header" data-position="fixed">
-            <a href="#arunhome" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all"></a>
-            <h2>Home Work</h2>
-        </div><!-- /header -->
-        <div role="main">  
-        <div id="result"></div>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <p>  &copy;   www.themaxtech.com</p>
-        </div>
-    </div> 
-
-    <div data-url="foodmenu" id="foodmenu" data-role="page" data-theme="a">
-        <div data-role="header" data-position="fixed">
-            <a href="#arunhome" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all"></a>
-            <h2>Food Menu</h2>
-        </div><!-- /header -->
-        <div role="main">  
-        <div id="result"></div>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <p>  &copy;   www.themaxtech.com</p>
-        </div>
-    </div> 
-
-    <div data-url="leavelist" id="leavelist" data-role="page" data-theme="a">
-        <div data-role="header" data-position="fixed">
-            <a href="#arunhome" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all"></a>
-            <h2>Leave Status</h2>
-        </div><!-- /header -->
-        <div role="main">  
-        <div id="result"></div>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <p>  &copy;   www.themaxtech.com</p>
-        </div>
-    </div> 
-
-    <div data-url="reportcard" id="reportcard" data-role="page" data-theme="a">
-        <div data-role="header" data-position="fixed">
-            <a href="#arunhome" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all"></a>
-            <h2>Report Card</h2>
-        </div><!-- /header -->
-        <div role="main">  
-        <div id="result"></div>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <p>  &copy;   www.themaxtech.com</p>
-        </div>
-    </div> 
-
-    <div data-url="examtimetable" id="examtimetable" data-role="page" data-theme="a">
-        <div data-role="header" data-position="fixed">
-            <a href="#arunhome" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all"></a>
-            <h2>Exam Time Table</h2>
-        </div><!-- /header -->
-        <div role="main">  
-        <div id="result"></div>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <p>  &copy;   www.themaxtech.com</p>
-        </div>
-    </div> 
-
-    <div data-url="classtimetable" id="classtimetable" data-role="page" data-theme="a">
-        <div data-role="header" data-position="fixed">
-            <a href="#arunhome" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all"></a>
-            <h2>Class Timetable</h2>
-        </div><!-- /header -->
-        <div role="main">  
-        <div id="result"></div>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <p>  &copy;   www.themaxtech.com</p>
-        </div>
-    </div>  
+  
        <div id="arungallery"  data-role="page" data-theme="a">
             <div class="toolbar">
                 <h1>Albums</h1>
@@ -663,12 +580,13 @@
           $.mobile.changePage.defaults.changeHash = false;
         });
         </script> 
-        <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script> 
+
         <script type="text/javascript" src="js/jstorage.js"></script>
         <script type="text/javascript" src="js/index.js"></script> 
         <script type="text/javascript">
             app.initialize();
-        </script>
+        </script> 
 
         
     </body>
