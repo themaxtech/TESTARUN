@@ -19,7 +19,7 @@
                    <a href="#defaultpanel" data-role="button" data-inline="true" data-icon="bars" class="transparentButton ui-alt-icon ui-corner-all ui-nodisc-icon" data-iconpos="notext" id="headmenu">Menu</a>   
                    </td>
                     <td>
-                     <h1> School Name Matric High Sec School <br> - Tirupur  </h1>
+                     <h1> Mount Litera Zee School</h1>
                     </td>
                    </tr>
                  </table> 
@@ -52,7 +52,7 @@
                 <div class="ui-block-a"> 
                     <a data-role="button"  name="homesubmit" id="homesubmit" value="Submit" > 
                             <img alt="Inbox" src="css/icons/android/drawable-xhdpi/ic_email_white_24dp.png" width="50" height="50"/>  <br/>
-                            <div class="custom-button"> Message Inbox   </div> 
+                            <div class="custom-button"> <h2> Message Inbox </h2> </div> 
                             <form id="check-mess" data-ajax="false">
                                 <input type="hidden" value="" name="usernameb" id="usernameb"/>
                                 <input type="hidden" value="" name="passwordb" id="passwordb"/>  
@@ -61,18 +61,23 @@
                             </form> 
                         </a>  
                 </div>
-                <div class="ui-block-b"> 
-                <a data-role="button"> 
+                <div class="ui-block-b">  
+                    <a data-role="button" name="attendance" id="attendance" value="Submit" > 
                       <img alt="Attendance" src="css/icons/android/drawable-xhdpi/ic_email_white_24dp.png" width="50" height="50">
                                 <br/>
-                                <div class="custom-button"> Attendance Report</div>
-                                
-                        </a>
+                                <div class="custom-button"><h2> Attendance Report </h2></div>
+                                <form id="check-leavelist" data-ajax="false">
+                                    <input type="hidden" value="" name="usernameo" id="usernameo"/>
+                                    <input type="hidden" value="" name="passwordo" id="passwordo"/>  
+                                    <input type="hidden" value="" name="classo" id="classo"/>  
+                                    <input type="hidden" value="" name="seco" id="seco"/>  
+                                </form>  
+                    </a>
                 </div>
                 <div class="ui-block-c"> 
                     <a data-role="button" name="foodsubmit" id="foodsubmit" value="Submit" > 
                     <img alt="Food" src="css/icons/android/drawable-xhdpi/ic_local_dining_white_24dp.png" width="50" height="50" /><br/>
-                    <div class="custom-button">   Food Menu  </div> 
+                    <div class="custom-button">   <h2>  Food Menu  </h2>  </div> 
                     <form id="check-food" data-ajax="false">
                         <input type="hidden" value="" name="usernamef" id="usernamef"/>
                         <input type="hidden" value="" name="passwordf" id="passwordf"/>  
@@ -88,7 +93,7 @@
                     <a data-role="button" name="homeworksubmit" id="homeworksubmit" value="Submit" > 
                     <img alt="Homework" src="css/icons/android/drawable-xhdpi/ic_assignment_white_24dp.png" width="50" height="50"/>
                     <br/>
-                    <div class="custom-button">    Home Work  </div>
+                    <div class="custom-button">  <h2>  Home Work </h2> </div>
                     <form id="check-homework" data-ajax="false">
                         <input type="hidden" value="" name="usernamee" id="usernamee"/>
                         <input type="hidden" value="" name="passworde" id="passworde"/>  
@@ -101,14 +106,14 @@
                     <a data-role="button" href="#arunleave" > 
                     <img alt="Leave Req" src="css/icons/android/drawable-xhdpi/ic_email_white_24dp.png" width="50" height="50">
                     <br/>
-                    <div class="custom-button">   Apply Leave  </div> 
+                    <div class="custom-button">  <h2>   Apply Leave   </h2> </div> 
                     </a>
                 </div>
                 <div class="ui-block-c"> 
                     <a data-role="button" name="reportsubmit" id="reportsubmit" value="Submit" > 
                     <img alt="Marks" src="css/icons/android/drawable-xhdpi/ic_school_white_24dp.png" width="50" height="50" /> 
                     <br/>
-                    <div class="custom-button">  Report Card  </div> 
+                    <div class="custom-button"> <h2> Report Card </h2>  </div> 
                     <form id="check-report" data-ajax="false">
                         <input type="hidden" value="" name="usernameh" id="usernameh"/>
                         <input type="hidden" value="" name="passwordh" id="passwordh"/>  
@@ -124,7 +129,7 @@
                     <a data-role="button" name="examsubmit" id="examsubmit" value="Submit" > 
                     <img alt="Exam Time" src="css/icons/android/drawable-xhdpi/ic_event_note_white_24dp.png" width="50" height="50"/>
                     <br/>
-                    <div class="custom-button">   Exam Schedule  </div> 
+                    <div class="custom-button">  <h2> Exam Schedule  </h2></div> 
                     <form id="check-exam" data-ajax="false">
                         <input type="hidden" value="" name="usernamei" id="usernamei"/>
                         <input type="hidden" value="" name="passwordi" id="passwordi"/>  
@@ -137,7 +142,7 @@
                     <a data-role="button" name="timesubmit" id="timesubmit" value="Submit"> 
                     <img alt="Class Time" src="css/icons/android/drawable-xhdpi/ic_access_time_white_24dp.png" width="50" height="50">
                     <br/>
-                    <div class="custom-button">   Class Timetable  </div> 
+                    <div class="custom-button">  <h2> Class Timetable </h2> </div> 
                      <form id="check-time" data-ajax="false">
                         <input type="hidden" value="" name="usernamej" id="usernamej"/>
                         <input type="hidden" value="" name="passwordj" id="passwordj"/>  
@@ -150,7 +155,7 @@
                     <a data-role="button" name="submit" id="submit" value="Submit" > 
                     <img alt="Calender" src="css/icons/android/drawable-xhdpi/ic_assignment_white_24dp.png" width="50" height="50" />
                     <br/>
-                    <div class="custom-button">   School Calender  </div> 
+                    <div class="custom-button">  <h2> School Calender </h2>  </div> 
                     <form id="check-cal" data-ajax="false">
                         <input type="hidden" value="" name="usernamea" id="usernamea"/>
                          <input type="hidden" value="" name="passworda" id="passworda"/>  
@@ -160,25 +165,25 @@
             </fieldset>
 
             <fieldset class="ui-grid-b">
-                <div class="ui-block-a xbox">
+                <div class="ui-block-a">
                     <a data-role="button"> 
                     <img alt="Bus Route" src="css/icons/android/drawable-xhdpi/ic_directions_bus_white_24dp.png" width="50" height="50"/>
                     <br/>
-                    <div class="custom-button">  Bus Route Chart  </div> 
+                    <div class="custom-button"> <h2> Bus Route Chart </h2> </div> 
                     </a>  
                 </div>
                 <div class="ui-block-b"> 
-                    <a data-role="button" href="gallery.html" rel="external" > 
-                    <img alt="Events" src="css/icons/android/drawable-xhdpi/ic_photo_library_white_24dp.png" width="50" height="50">
+                    <a data-role="button" href="gallery.html" rel="external"> 
+                    <img alt="Eventsgallery" src="css/icons/android/drawable-xhdpi/ic_photo_library_white_24dp.png" width="50" height="50">
                     <br/>
-                    <div class="custom-button">    Events Gallery  </div> 
+                    <div class="custom-button">  <h2 style="color:#fff;">  Events Gallery  </h2> </div> 
                     </a>
                 </div>
                 <div class="ui-block-c"> 
                     <a data-role="button" name="prosubmit" id="prosubmit" value="Submit"> 
                     <img alt="Profile" src="css/icons/android/drawable-xhdpi/ic_person_white_24dp.png" width="50" height="50" /> 
                     <br/>
-                    <div class="custom-button">   My Child Profile  </div> 
+                    <div class="custom-button">  <h2> My Child Profile  </h2> </div> 
                     <form id="check-pro" data-ajax="false">
                         <input type="hidden" value="" name="usernamec" id="usernamec"/>
                         <input type="hidden" value="" name="passwordc" id="passwordc"/>  
@@ -192,29 +197,56 @@
                     <a data-role="button"> 
                     <img alt="Fees" src="css/icons/android/drawable-xhdpi/ic_email_white_24dp.png" width="50" height="50"/>
                     <br/>
-                    <div class="custom-button">    Fees & Accounts  </div> 
+                    <div class="custom-button"> <h2> Fees & Accounts </h2> </div> 
                     </a>  
                 </div>
                 <div class="ui-block-b"> 
-                    <a data-role="button"> 
+                    <a data-role="button" name="health" id="health" value="Submit" > 
                     <img alt="Health" src="css/icons/android/drawable-xhdpi/ic_local_hospital_white_24dp.png" width="50" height="50">
                     <br/>
-                    <div class="custom-button">   Health Card  </div> 
+                    <div class="custom-button">  <h2> Health Card </h2> </div> 
+                    <form id="check-leavelist" data-ajax="false">
+                        <input type="hidden" value="" name="usernameo" id="usernameo"/>
+                        <input type="hidden" value="" name="passwordo" id="passwordo"/>  
+                        <input type="hidden" value="" name="classo" id="classo"/>  
+                        <input type="hidden" value="" name="seco" id="seco"/>  
+                    </form> 
                     </a>
                 </div>
                 <div class="ui-block-c"> 
                     <a data-role="button"> 
                     <img alt="Tracking" src="css/icons/android/drawable-xhdpi/ic_person_pin_circle_white_24dp.png" width="50" height="50" /> 
                     <br/>
-                    <div class="custom-button">  School Bus Tracking  </div> 
+                    <div class="custom-button">  <h2> School Bus Tracking </h2>  </div> 
                     </a>                      
                 </div> 
             </fieldset>
             <fieldset class="ui-grid-b">
+                <div class="ui-block-a">
+                    <a data-role="button" name="leavelistsubmit" id="leavelistsubmit" value="Submit" > 
+                    <img alt="Leave Stat" src="css/icons/android/drawable-xhdpi/ic_school_white_24dp.png" width="50" height="50" /> 
+                    <br/>
+                    <div class="custom-button"> <h2> Leave Status </h2>  </div> 
+                    <form id="check-leavelist" data-ajax="false">
+                    <input type="hidden" value="" name="usernameo" id="usernameo"/>
+                    <input type="hidden" value="" name="passwordo" id="passwordo"/>  
+                    <input type="hidden" value="" name="classo" id="classo"/>  
+                    <input type="hidden" value="" name="seco" id="seco"/>  
+                </form> 
+                    </a>   
+                </div>
+                 
+            </fieldset>
+
+            <fieldset class="ui-grid-b">
                     <br>
-                 <p style="text-align:center;"> Powered by www.schoolaccess.in  <img src="css/images/32x32.png" alt="Logo" align="middle"/></p>
+                  
             <fieldset>    
         </div>   
+         <div class="ui-body-f" data-role="footer" data-position="fixed" data-tap-toggle="false" data-transition="none" data-theme="h">
+             <p style="text-align:center;"> Powered by www.schoolaccess.in  
+                <img src="css/images/32x32.png" alt="Logo" align="middle" width="15" height="15" /> </p>
+        </div>
     </div>
  
  <!-- <div data-role="page" id="login" data-theme="a" class="app" style="background-color: #FF1814;"> -->
@@ -241,6 +273,7 @@
             </form>
             <p style="text-align:center;"> Powered by www.schoolaccess.in  <img src="css/images/32x32.png" alt="Logo" align="middle"/></p>            
         </div> 
+        
         </div>
 
      <!--   <div style="min-height: 700px;" class="ui-page ui-page-theme-a"  tabindex="0" data-url="arunhome" id="arunhome" class="current" data-role="page">   -->

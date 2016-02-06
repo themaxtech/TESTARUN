@@ -176,7 +176,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                 userHandler.appid = $.jStorage.get("appid"); 
                 // Send data to server through the Ajax call
                 // action is functionality we want to call and outputJSON is our data
-                   $.ajax({url: 'http://amscbse.in/ios/auth.php',
+                   $.ajax({url: 'http://schoolaccess.org.in/ios/auth.php',
                     //$.ajax({url: 'auth.php',
                     data: {action : 'authorization', deviceid: userHandler.appid, formData : $('#check-user').serialize()},
                     type: 'post',                  
@@ -267,7 +267,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                 // Send data to server through the Ajax call
                 // action is functionality we want to call and outputJSON is our data
                 
-                    $.ajax({url: 'http://amscbse.in/ios/yearcal.php',
+                    $.ajax({url: 'http://schoolaccess.org.in/ios/yearcal.php',
                     //$.ajax({url: 'yearcal.php',
                     data: {action : 'authorization', formData : $('#check-cal').serialize()},
                     type: 'post',                  
@@ -314,9 +314,11 @@ $(document).on('pagecontainershow', function (e, ui) {
                              "</div>  " +
                         " </div>" +   
                         "<div data-role='content'>" + 
-                        "</div><div data-position='fixed'>"+
-                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
-
+                        "</div>" +
+                        "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
+                             "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
+                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                        "</div></div>";
                           $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
                         $.mobile.changePage( "#year_calendar", {transition: "none", reloadPage:false} );
@@ -324,10 +326,10 @@ $(document).on('pagecontainershow', function (e, ui) {
          
                             var newHTML = [];
                             
-                            newHTML.push("<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable'  style='width:100%;'>" + 
+                            newHTML.push("<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable'  style='width:100%;background-color:#F7F9FA;'>" + 
                               "<thead><tr style='background-color:#F7AB48;'>" + 
-                                  "<th style='width:20%;'>Date</th>" + 
-                                  "<th style='width:80%;'>Description</th></tr>" + 
+                                  "<th>Date</th>" + 
+                                  "<th>Description</th></tr>" + 
                               "</thead>" + 
                               "<tbody>");
 
@@ -368,7 +370,7 @@ $(document).on('pagecontainershow', function (e, ui) {
         $(document).on('click', '#homesubmit', function() { // catch the form's submit event
 
             if($('#usernameb').val().length > 0 && $('#passwordb').val().length > 0){
-                    $.ajax({url: 'http://amscbse.in/ios/mes.php',
+                    $.ajax({url: 'http://schoolaccess.org.in/ios/mes.php',
                     //$.ajax({url: 'mes.php',
                     data: {action : 'authorization', formData : $('#check-mess').serialize()},
                     type: 'post',                  
@@ -417,9 +419,11 @@ $(document).on('pagecontainershow', function (e, ui) {
                              "</div>  " +
                         " </div>" +   
                         "<div data-role='content'>" + 
-                        "</div><div data-position='fixed'>"+
-                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
-
+                        "</div>" +
+                        "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
+                             "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
+                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                        "</div></div>";
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar");
                         $.mobile.changePage( "#year_calendar", {transition: "none", reloadPage:false} );
@@ -467,13 +471,271 @@ $(document).on('pagecontainershow', function (e, ui) {
             return false; // cancel original event to prevent form submitting
         });
         
+        // ---Health Card button click event--- //
+
+        $(document).on('click', '#health', function() { // catch the form's submit event
+
+            if($('#usernameo').val().length > 0 && $('#passwordo').val().length > 0){
+                    $.ajax({url: 'http://schoolaccess.org.in/ios/health.php',
+                    //$.ajax({url: 'mes.php',
+                    data: {action : 'authorization', formData : $('#check-leavelist').serialize()},
+                    type: 'post',                  
+                    async: 'true',
+                    dataType: 'json',
+                    beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                        $.mobile.loading('show'); // This will show Ajax spinner
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete   
+                        $.mobile.loading('hide'); // This will hide Ajax spinner
+                    },
+                    success: function (result) {
+                        // Check if authorization process was successful
+
+                        var counter = 0; 
+                         
+                       if(result.status == 'success') { 
+                     
+                        stud_prof = 
+                        "<style>" +
+                        "th {" +
+                        "    border-bottom: 1px solid #d6d6d6;" +
+                        "}" +
+
+                        "tr:nth-child(even) {" +
+                        "    background: #e9e9e9;" +
+                        "}" +
+                        "</style>" +
+                        "<div id='year_calendar' data-role='page' class='ui-page ui-page-theme-f'>" + 
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'  data-theme='f'>" +
+                        
+                            " <div data-type='horizontal' class='ui-btn-left'> " +
+                               "  <table>" +
+                                 " <tr>" +
+                                 "   <td>" +
+                                   " <a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" +
+                                    "</td>" +
+                                   "  <td>" +
+                                    "  <h2> Health Card</h2> " +  
+                                    " </td>" +
+                                    "</tr>" +
+                                  "</table> " +
+                             "</div>  " +
+                        " </div>" +   
+                        "<div data-role='content'>" + 
+                        "</div>" +
+                        "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
+                             "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
+                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                        "</div></div>";
+                        $.mobile.activePage.after(stud_prof);
+                        //$.mobile.changePage("#year_calendar");
+                        $.mobile.changePage( "#year_calendar", {transition: "none", reloadPage:false} );
+                        function myFunction2() { 
+         
+                            var newHTMLA = [];
+                            
+                             
+                             $.each(result.posts, function( i, val ) { 
+                                    output ="<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>"+
+                                    "<thead><th colspan='2' style='background-color:#F7AB48;'><b> Health Report</b></th></thead>" +
+                                    "<tbody>"+   
+                                    "<tr><td style='text-align:left;background-color:#90C3D4;'>" + result.posts[i].b1 + "</td> " +
+                                    "<td style='text-align:left;'> " + result.posts[i].a1 + " </td><tr>" + 
+                                    "<tr><td style='text-align:left;background-color:#90C3D4;'>" + result.posts[i].b2 + "</td> " +
+                                    "<td style='text-align:left;'> " + result.posts[i].a2 + " </td><tr>" + 
+                                    "<tr><td style='text-align:left;background-color:#90C3D4;'>" + result.posts[i].b3 + "</td> " +
+                                    "<td style='text-align:left;'> " + result.posts[i].a3 + " </td><tr>" + 
+                                    "<tr><td style='text-align:left;background-color:#90C3D4;'>" + result.posts[i].b4 + "</td> " +
+                                    "<td style='text-align:left;'> " + result.posts[i].a4 + " </td><tr>" + 
+                                    "<tr><td style='text-align:left;background-color:#90C3D4;'>" + result.posts[i].b5 + "</td> " +
+                                    "<td style='text-align:left;'> " + result.posts[i].a5 + " </td><tr>" + 
+                                    "<tr><td style='text-align:left;background-color:#90C3D4;'>" + result.posts[i].b6 + "</td> " +
+                                    "<td style='text-align:left;'> " + result.posts[i].a6 + " </td><tr>" + 
+                                    "<tr><td style='text-align:left;background-color:#90C3D4;'>" + result.posts[i].b7 + "</td> " +
+                                    "<td style='text-align:left;'> " + result.posts[i].a7 + " </td><tr>" + 
+                                    "<tr><td style='text-align:left;background-color:#90C3D4;'>" + result.posts[i].b8 + "</td> " +
+                                    "<td style='text-align:left;'> " + result.posts[i].a8 + " </td><tr>" + 
+
+                                    "</tbody></table><br>";
+                                    //console.log(output); 
+                                    newHTMLA.push(output); 
+                                     
+                            }); 
+                            
+                            //newHTMLA.push("</tbody></table>");   
+                            okfine = $(".ui-content").html(newHTMLA.join("")); 
+                            return okfine;  
+                        }
+                        $("#myTable2", $.mobile.activePage).val(myFunction2());
+                        //$.mobile.pageContainer.pagecontainer("change", "#year_calendar", { options });
+
+
+                         //console.log($('.ui-page-active').attr('id')); 
+                         //console.log('ARUN Log'); 
+                        
+                        
+                         
+                        } else {
+                                alert('Health Report Not Generated!');
+                        }  
+                    },
+                    error: function (request,error) {
+                        // This callback function will trigger on unsuccessful action               
+                        alert('Network error has occurred please try again!'); 
+                    }
+                });  
+
+            } else {
+                alert('Please check Class, Sec fields');
+            }  
+    
+            return false; // cancel original event to prevent form submitting
+        });
+        
+         // ---Attendance Card button click event--- //
+
+        $(document).on('click', '#attendance', function() { // catch the form's submit event
+
+            if($('#usernameo').val().length > 0 && $('#passwordo').val().length > 0){
+                    $.ajax({url: 'http://schoolaccess.org.in/ios/attendance.php',
+                    //$.ajax({url: 'mes.php',
+                    data: {action : 'authorization', formData : $('#check-leavelist').serialize()},
+                    type: 'post', 
+                    async: 'true',
+                    dataType: 'json',
+                    beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                        $.mobile.loading('show'); // This will show Ajax spinner
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete   
+                        $.mobile.loading('hide'); // This will hide Ajax spinner
+                    },
+                    success: function (result) {
+                        // Check if authorization process was successful
+
+                        var counter = 0; 
+                         
+                       if(result.status == 'success') { 
+                     
+                        stud_prof = 
+                        "<style>" +
+                        "th {" +
+                        "    border-bottom: 1px solid #d6d6d6;" +
+                        "}" +
+
+                        "tr:nth-child(even) {" +
+                        "    background: #e9e9e9;" +
+                        "}" +
+                        "</style>" +
+                        "<div id='year_calendar' data-role='page' class='ui-page ui-page-theme-f'>" + 
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'  data-theme='f'>" +
+                        
+                            " <div data-type='horizontal' class='ui-btn-left'> " +
+                               "  <table>" +
+                                 " <tr>" +
+                                 "   <td>" +
+                                   " <a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" +
+                                    "</td>" +
+                                   "  <td>" +
+                                    "  <h2> Attendance Report </h2> " +  
+                                    " </td>" +
+                                    "</tr>" +
+                                  "</table> " +
+                             "</div>  " +
+                        " </div>" +   
+                        "<div data-role='content'>" + 
+                        "</div>" +
+                        "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
+                             "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
+                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                        "</div></div>";
+                        $.mobile.activePage.after(stud_prof);
+                        //$.mobile.changePage("#year_calendar");
+                        $.mobile.changePage( "#year_calendar", {transition: "none", reloadPage:false} );
+                        function myFun() {  
+                            var newHTMLA = []; 
+                             $.each(result.posts, function( i, val ) { 
+                                    output ="<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>"+
+                                    "<tbody>"+
+                                    "<tr><td style='text-align:left;background-color:#90C3D4;'>" + result.posts[i].b1 + "</td> " +
+                                    "<td style='text-align:left;'> " + result.posts[i].a1 + " </td><tr>" + 
+                                    "<tr><td style='text-align:left;background-color:#90C3D4;'>" + result.posts[i].b2 + "</td> " +
+                                    "<td style='text-align:left;'> " + result.posts[i].a2 + " </td><tr>" + 
+                                    "<tr><td style='text-align:left;background-color:#90C3D4;'>" + result.posts[i].b3 + "</td> " +
+                                    "<td style='text-align:left;'> " + result.posts[i].a3 + " </td><tr>" + 
+                                    "<tr><td style='text-align:left;background-color:#90C3D4;'>" + result.posts[i].b4 + "</td> " +
+                                    "<td style='text-align:left;'> " + result.posts[i].a4 + " </td><tr>" +  
+                                    "</tbody></table><br>";
+                                    //console.log(output); 
+                                    newHTMLA.push(output); 
+                                     
+                            }); 
+                            
+                            //newHTMLA.push("</tbody></table>");   
+                            okfine = $(".ui-content").html(newHTMLA.join("")); 
+                            return okfine;  
+                        }
+                        function myFunction2() { 
+         
+                            var newHTMLA = [];
+                             
+                             $.each(result.posts, function( i, val ) { 
+                                    output ="<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>"+
+                                    "<tbody>"+
+                                    "<tr><td style='text-align:left;background-color:#90C3D4;'>" + result.posts[i].b1 + "</td> " +
+                                    "<td style='text-align:left;'> " + result.posts[i].a1 + " </td><tr>" + 
+                                    "<tr><td style='text-align:left;background-color:#90C3D4;'>" + result.posts[i].b2 + "</td> " +
+                                    "<td style='text-align:left;'> " + result.posts[i].a2 + " </td><tr>" + 
+                                    "<tr><td style='text-align:left;background-color:#90C3D4;'>" + result.posts[i].b3 + "</td> " +
+                                    "<td style='text-align:left;'> " + result.posts[i].a3 + " </td><tr>" + 
+                                    "<tr><td style='text-align:left;background-color:#90C3D4;'>" + result.posts[i].b4 + "</td> " +
+                                    "<td style='text-align:left;'> " + result.posts[i].a4 + " </td><tr>" +  
+                                    "</tbody></table><br>";
+                                    //console.log(output); 
+                                    newHTMLA.push(output); 
+                                     
+                            }); 
+                            
+                            //newHTMLA.push("</tbody></table>");   
+                            okfine = $(".ui-content").html(newHTMLA.join("")); 
+                            return okfine;  
+                        }
+                        $("#myTable2", $.mobile.activePage).val(myFunction2());
+                        //$.mobile.pageContainer.pagecontainer("change", "#year_calendar", { options });
+
+
+                         //console.log($('.ui-page-active').attr('id')); 
+                         //console.log('ARUN Log'); 
+                        
+                        
+                         
+                        } else {
+                                alert('Health Report Not Generated!');
+                        }  
+                    },
+                    error: function (request,error) {
+                        // This callback function will trigger on unsuccessful action               
+                        alert('Network error has occurred please try again!'); 
+                    }
+                });  
+
+            } else {
+                alert('Please check Class, Sec fields');
+            }  
+    
+            return false; // cancel original event to prevent form submitting
+        });
+        
         // ---Profile button click event--- //
 
             $(document).on('click', '#prosubmit', function() { // catch the form's submit event
 
             if($('#usernamec').val().length > 0 && $('#passwordc').val().length > 0){
 
-                    $.ajax({url: 'http://amscbse.in/ios/pro.php',
+                    $.ajax({url: 'http://schoolaccess.org.in/ios/pro.php',
                     //$.ajax({url: 'pro.php',
                     data: {action : 'authorization', formData : $('#check-pro').serialize()},
                     type: 'post',                  
@@ -492,10 +754,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
                         var counter = 0; 
                          
-                       if(result.status == 'success') { 
-                            
-                     
-                       
+                       if(result.status == 'success') {   
                 
                         stud_prof = 
                         "<style>" +
@@ -523,10 +782,11 @@ $(document).on('pagecontainershow', function (e, ui) {
                              "</div>  " +
                         " </div>" +   
                         "<div data-role='content'>" + 
-                        "</div><div data-position='fixed'>"+
-                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
-
-  
+                       "</div>" +
+                        "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
+                             "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
+                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                        "</div></div>";
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
                         $.mobile.changePage( "#year_calendar", {transition: "none", reloadPage:false} );
@@ -592,7 +852,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
             if($('#usernamee').val().length > 0 && $('#passworde').val().length > 0){
 
-                    $.ajax({url: 'http://amscbse.in/ios/homework.php',
+                    $.ajax({url: 'http://schoolaccess.org.in/ios/homework.php',
                     //$.ajax({url: 'homework.php',
                     data: {action : 'authorization', formData : $('#check-homework').serialize()},
                     type: 'post',                  
@@ -642,9 +902,11 @@ $(document).on('pagecontainershow', function (e, ui) {
                              "</div>  " +
                         " </div>" +   
                         "<div data-role='content'>" + 
-                        "</div><div data-position='fixed'>"+
-                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
-
+                       "</div>" +
+                        "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
+                             "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
+                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                        "</div></div>";
  
                         //$.mobile.activePage.after(stud_prof);
                         $.mobile.changePage("#year_calendar"); 
@@ -714,7 +976,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
             if($('#usernamef').val().length > 0 && $('#passwordf').val().length > 0){
 
-                    $.ajax({url: 'http://amscbse.in/ios/food.php',
+                    $.ajax({url: 'http://schoolaccess.org.in/ios/food.php',
                     //$.ajax({url: 'food.php',
                     data: {action : 'authorization', formData : $('#check-food').serialize()},
                     type: 'post',                  
@@ -764,9 +1026,11 @@ $(document).on('pagecontainershow', function (e, ui) {
                              "</div>  " +
                         " </div>" +   
                         "<div data-role='content'>" + 
-                        "</div><div data-position='fixed'>"+
-                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
-
+                        "</div>" +
+                        "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
+                             "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
+                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                        "</div></div>";
  
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -818,7 +1082,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
             if($('#usernameo').val().length > 0 && $('#passwordo').val().length > 0){
 
-                    $.ajax({url: 'http://amscbse.in/ios/leave.php',
+                    $.ajax({url: 'http://schoolaccess.org.in/ios/leave.php',
                     //$.ajax({url: 'leave.php',
                     data: {action : 'authorization', formData : $('#check-leavelist').serialize()},
                     type: 'post',                  
@@ -868,9 +1132,11 @@ $(document).on('pagecontainershow', function (e, ui) {
                              "</div>  " +
                         " </div>" +   
                         "<div data-role='content'>" + 
-                        "</div><div data-position='fixed'>"+
-                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
- 
+                       "</div>" +
+                        "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
+                             "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
+                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                        "</div></div>";
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
                         $.mobile.changePage( "#year_calendar", {transition: "none", reloadPage:false} );
@@ -919,7 +1185,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
             if($('#usernameh').val().length > 0 && $('#passwordh').val().length > 0){
 
-                    $.ajax({url: 'http://amscbse.in/ios/report.php',
+                    $.ajax({url: 'http://schoolaccess.org.in/ios/report.php',
                     //$.ajax({url: 'report.php',
                     data: {action : 'authorization', formData : $('#check-report').serialize()},
                     type: 'post',                  
@@ -967,9 +1233,11 @@ $(document).on('pagecontainershow', function (e, ui) {
                              "</div> " +
                         " </div>" +
                         "<div data-role='content'>" + 
-                        "</div><div data-position='fixed'>"+
-                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
-  
+                        "</div>" +
+                        "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
+                             "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
+                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                        "</div></div>";
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
                          $.mobile.changePage( "#year_calendar", {transition: "none", reloadPage:false} );
@@ -1105,7 +1373,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
             if($('#usernamei').val().length > 0 && $('#passwordi').val().length > 0){
 
-                    $.ajax({url: 'http://amscbse.in/ios/exam.php',
+                    $.ajax({url: 'http://schoolaccess.org.in/ios/exam.php',
                     //$.ajax({url: 'exam.php',
                     data: {action : 'authorization', formData : $('#check-exam').serialize()},
                     type: 'post',                  
@@ -1155,9 +1423,11 @@ $(document).on('pagecontainershow', function (e, ui) {
                              "</div>  " +
                         " </div>" +   
                         "<div data-role='content'>" + 
-                        "</div><div data-position='fixed'>"+
-                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
-  
+                        "</div>" +
+                        "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
+                             "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
+                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                        "</div></div>";
 
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -1232,7 +1502,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
             if($('#usernamej').val().length > 0 && $('#passwordj').val().length > 0){
 
-                    $.ajax({url: 'http://amscbse.in/ios/time.php',
+                    $.ajax({url: 'http://schoolaccess.org.in/ios/time.php',
                     //$.ajax({url: 'time.php',
                     data: {action : 'authorization', formData : $('#check-time').serialize()},
                     type: 'post',                  
@@ -1280,9 +1550,11 @@ $(document).on('pagecontainershow', function (e, ui) {
                              "</div>  " +
                         " </div>" +   
                         "<div data-role='content'>" + 
-                        "</div><div data-position='fixed'>"+
-                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
-  
+                        "</div>" +
+                        "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
+                             "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
+                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                        "</div></div>";
    
 
                         $.mobile.activePage.after(stud_prof);
@@ -1342,7 +1614,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
             if($('#usernamek').val().length > 0 && $('#passwordk').val().length > 0){
 
-                    $.ajax({url: 'http://amscbse.in/ios/gallery.php',
+                    $.ajax({url: 'http://schoolaccess.org.in/ios/gallery.php',
                     //$.ajax({url: 'gallery.php',
                     data: {action : 'authorization', formData : $('#check-image').serialize()},
                     type: 'post',                  
@@ -1392,9 +1664,11 @@ $(document).on('pagecontainershow', function (e, ui) {
                              "</div>  " +
                         " </div>" +   
                         "<div data-role='content'>" + 
-                        "</div><div data-position='fixed'>"+
-                        "<p style='text-align:center;'> Powered by www.schoolaccess.in  <img src='css/images/32x32.png' alt='Logo' align='middle'/></p></div></div>"; 
-
+                        "</div>" +
+                        "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
+                             "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
+                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                        "</div></div>";
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
                         $.mobile.changePage( "#year_calendar", {transition: "none", reloadPage:false} );
@@ -1461,7 +1735,7 @@ $(document).on('pagecontainershow', function (e, ui) {
         $(document).on('click', '#leavesubmit', function() { // catch the form's submit event
             if($('#regnot').val().length > 0 && $('#usernamet').val().length > 0 && $('#clat').val().length > 0 && $('#sect').val().length > 0 && $('#datt').val().length > 0 && $('#messt').val().length > 0){
                    
-                    $.ajax({url: 'http://amscbse.in/ios/leaveform.php',
+                    $.ajax({url: 'http://schoolaccess.org.in/ios/leaveform.php',
                     //$.ajax({url: 'leaveform.php',
                     data: {action : 'authorization', formData : $('#check-leave').serialize()},
                     type: 'post',                  
@@ -1683,6 +1957,14 @@ $(document).on('pagecontainerbeforechange', function (e, ui) {
         $(document).off('click', '#submit').on('click', '#submit',function(e) {
                         //alert('Year cal click');
     }); 
+        
+$(document).off('click', '#attendance').on('click', '#attendance',function(e) {
+                        //alert('Button click');
+                    }); 
+
+$(document).off('click', '#health').on('click', '#health',function(e) {
+                        //alert('Button click');
+                    }); 
 
 
  $(document).off('click', '#prosubmit').on('click', '#prosubmit',function(e) {
