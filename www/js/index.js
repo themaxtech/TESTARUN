@@ -34,6 +34,7 @@ var arung4 = '';
 var arung5 = '';
 var arung6 = '';
 var arung7 = ''; 
+var arung111 = ''; 
  
 
  var userHandler = {
@@ -43,7 +44,9 @@ var arung7 = '';
     usersec     : arung5,
     useroriname : arung6,
     status      : arung2,
-    appid       : arung7
+    appid       : arung7,
+    gcmid       : arung111
+    
 }
 
 var app = {
@@ -108,7 +111,7 @@ var app = {
                 {
                     //console.log("Regid " + e.regid);
                     //alert('registration id = '+e.regid);
-                    $.jStorage.set("appid", e.regid);
+                    $.jStorage.set("gcmid", e.regid);
                 }
             break;
  
@@ -175,11 +178,12 @@ $(document).on('pagecontainershow', function (e, ui) {
 
                 arung7 = $.jStorage.get("appid"); 
                 userHandler.appid = $.jStorage.get("appid"); 
+                userHandler.gcmid = $.jStorage.get("gcmid"); 
                 // Send data to server through the Ajax call
                 // action is functionality we want to call and outputJSON is our data
                    $.ajax({url: 'http://schoolaccess.org.in/ios/auth.php',
                     //$.ajax({url: 'auth.php',
-                    data: {action : 'authorization', deviceid: userHandler.appid, formData : $('#check-user').serialize()},
+                    data: {action : 'authorization', deviceid: userHandler.appid, gcmid: userHandler.gcmid, formData : $('#check-user').serialize()},
                     type: 'post',                  
                     async: 'true',
                     dataType: 'json',
