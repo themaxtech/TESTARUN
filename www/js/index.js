@@ -107,7 +107,8 @@ var app = {
                 if ( e.regid.length > 0 )
                 {
                     //console.log("Regid " + e.regid);
-                    alert('registration id = '+e.regid);
+                    //alert('registration id = '+e.regid);
+                    $.jStorage.set("appid", e.regid);
                 }
             break;
  
@@ -149,7 +150,7 @@ $(document).on('pagecontainershow', function (e, ui) {
         $(document).on('click', '#submit', function() { // catch the form's submit event
             if($('#username').val().length > 0 && $('#password').val().length > 0){
                  // * 
-                    if($('#username').val().length > 15 ) { 
+                    if($('#username').val().length > 100 ) { 
                             userHandler.status = 'success'; 
                             userHandler.userpass = '1';
                             userHandler.userclass = '12';
