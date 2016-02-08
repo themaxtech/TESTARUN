@@ -83,7 +83,7 @@ var app = {
         //console.log('Received Event: ' + id);
         var pushNotification = window.plugins.pushNotification;
         if (device.platform == 'android' || device.platform == 'Android') {
-            //alert("Register called");
+            alert("Android Register called");
             pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"824841663931","ecb":"app.onNotificationGCM"});
         }
         else {
@@ -95,7 +95,7 @@ var app = {
     successHandler: function(result) {
         userHandler.appid = result;
         $.jStorage.set("appid", userHandler.appid);
-        //alert('Callback Success! Result = '+result); 
+        alert('Callback Success! Result = '+result); 
     },
     errorHandler:function(error) {
         alert(error);
