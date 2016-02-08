@@ -83,8 +83,8 @@ var app = {
         //console.log('Received Event: ' + id);
         var pushNotification = window.plugins.pushNotification;
         if (device.platform == 'android' || device.platform == 'Android') {
-            alert("Android Register called");
-            pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"824841663931","ecb":"app.onNotificationGCM"});
+            //alert("Android Register called");
+            pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"2994127184","ecb":"app.onNotificationGCM"});
         }
         else {
             //alert("Register called");
@@ -95,7 +95,7 @@ var app = {
     successHandler: function(result) {
         userHandler.appid = result;
         $.jStorage.set("appid", userHandler.appid);
-        alert('Callback Success! Result = '+result); 
+        //alert('Callback Success! Result = '+result); 
     },
     errorHandler:function(error) {
         alert(error);
@@ -106,14 +106,14 @@ var app = {
             case 'registered':
                 if ( e.regid.length > 0 )
                 {
-                    console.log("Regid " + e.regid);
-                    //alert('registration id = '+e.regid);
+                    //console.log("Regid " + e.regid);
+                    alert('registration id = '+e.regid);
                 }
             break;
  
             case 'message':
               // this is the actual push notification. its format depends on the data model from the push server
-              //alert('message = '+e.message+' msgcnt = '+e.msgcnt);
+              alert('message = '+e.message+' msgcnt = '+e.msgcnt);
             break;
  
             case 'error':
