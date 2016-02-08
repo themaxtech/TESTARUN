@@ -23,7 +23,8 @@ src: local('Futura Md BT Medium'), url('futura_medium_bt-webfont.woff') format('
 
     */ 
   height:80px;  
-  background-image:url(images/round_logo_64x64.png);
+  background-image:url(images/round_logo_128x128.png);
+  background-size: 64px;
   background-repeat:no-repeat;
   background-position:right 10px center; 
   border: none; 
@@ -53,8 +54,10 @@ src: local('Futura Md BT Medium'), url('futura_medium_bt-webfont.woff') format('
 
 .ui-page-theme-f {
     font-weight: bold;
+    /* background-color: #ce0815; */ 
+}
+#login.ui-page-theme-f {
     background-color: #ce0815;
-
 }
 
 input#username{
@@ -157,12 +160,12 @@ border-radius:5px;
     display: block;
     width: 64px;
     height: 64px;
-    margin-right: 34px;
+    margin-right: 34px; 
 
     
 } 
 .grid-row a:last-child {
-    margin-right: 0px;
+    margin-right: 0px; 
 }
 a img {
 	margin-top: -5px;
@@ -173,16 +176,15 @@ a img {
 .custom-button{   
 	font-size: 10px;   
 	white-space: normal; 
-	font-family: "Futura Md BT Medium";	
+	font-family: "Futura Md BT Medium";	 
 }
 
 body .ui-body-a, body .ui-overlay-a {
-   text-shadow:0 0 0 !important; 
-
+   text-shadow:0 0 0 !important; 	 
 }
 
 body .ui-body-b, body .ui-overlay-b {
-   text-shadow:0 0 0 !important;
+   text-shadow:0 0 0 !important; 
 }
 
 body .ui-body-c, body .ui-overlay-c {
@@ -190,20 +192,21 @@ body .ui-body-c, body .ui-overlay-c {
 }
 .ui-grid-b{ 
 	/* mix-blend-mode: multiply; 
-	mix-blend-mode: screen;*/
-	 
+	mix-blend-mode: screen;*/	 
 } 
-
-.ui-grid-b .ui-block-a a, .ui-grid-b .ui-block-b a, .ui-grid-b .ui-block-c a { 
-  	background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+ 
+.ui-grid-b .ui-block-a a, .ui-grid-b .ui-block-b a, .ui-grid-b .ui-block-c a, #axe { 
+  	/* background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
+  	background-color: #ce0815;
   	border: none; 
   	color: #fff;
   	text-align: center;
-  	height: 100px;  
+  	height: 100px;   
 
   }
  .ui-grid-b .ui-block-a a:hover, .ui-grid-b .ui-block-b a:hover, .ui-grid-b .ui-block-c a:hover { 
-  	background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  	/* background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
+  	background-color: #ce0815;
   	border: none; 
   	color: #fff;
   	text-align: center;  	
