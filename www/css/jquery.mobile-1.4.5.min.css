@@ -198,8 +198,7 @@ body .ui-body-c, body .ui-overlay-c {
   	background-color: #ce0815;
   	border: none; 
   	color: #fff;
-  	text-align: center; 
-  	width: 100px;
+  	text-align: center;  
   	height: 80px;
 
   }
@@ -209,22 +208,21 @@ body .ui-body-c, body .ui-overlay-c {
   	border: none; 
   	color: #fff;
   	text-align: center; 
-  	width: 100px;
   	height: 80px; 
   }
 
 .ui-grid-b .ui-block-a, .ui-grid-b .ui-block-b, .ui-grid-b .ui-block-c {
-    padding: 1px 5px 1px 1px;
+    padding: 1px 10px 1px 10px; 
+    text-align: center;
 
     }
 
 html .ui-icon-arun-exit {
-     background-image: url(icons/android/drawable-xhdpi/ic_power_settings_new_black_24dp.png) !important; 
-     background-color: none;
+    background-image: url(icons/android/drawable-xhdpi/ic_power_settings_new_black_24dp.png) !important; 
+    background-color: none;
     border: none;
     box-shadow: none;
-    background-repeat: no-repeat;
-
+    background-repeat: no-repeat; 
 }
 
 
