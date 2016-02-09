@@ -131,9 +131,11 @@ var app = {
                         // if the notification contains a soundname, play it.
                         var my_media = new Media("/android_asset/www/"+ soundfile);
                         my_media.play();
+                        alert('message: '+e.payload.message);.
                     }
                     else
                     {  // otherwise we were launched because the user touched a notification in the notification tray.
+                        alert('message: '+e.payload.message);.
                         if ( e.coldstart )
                         {
                             $("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
