@@ -199,7 +199,7 @@ body .ui-body-c, body .ui-overlay-c {
   	border: none; 
   	color: #fff;
   	text-align: center; 
-  	min-width: 100px;
+  	width: 100px;
   	height: 80px;
 
   }
@@ -209,7 +209,7 @@ body .ui-body-c, body .ui-overlay-c {
   	border: none; 
   	color: #fff;
   	text-align: center; 
-  	min-width: 100px;
+  	width: 100px;
   	height: 80px; 
   }
 
