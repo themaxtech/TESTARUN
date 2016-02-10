@@ -99,7 +99,7 @@ var app = {
         userHandler.appid = result;
         $.jStorage.set("appid", userHandler.appid);
         //alert('Callback Success! Result = '+result); 
-        alert('Connected to Server! ID:'+appid);
+        alert('Connected to Server! ID:'+result);
     },
     errorHandler:function(error) {
         alert(error);
@@ -121,7 +121,9 @@ var app = {
             case 'message':
               // this is the actual push notification. its format depends on the data model from the push server
               //alert('message = '+e.message+' msgcnt = '+e.price);
-              alert('message = '+e.regid+' msgcnt = '+ e.event);
+             // alert('message = '+e.regid+' msgcnt = '+ e.event);
+             alert('message = ' + e.message + ' payload message: ' + e.payload.message + 
+                'e payload msgcnt: ' + e.payload.msgcnt + ' e.msg: ' + e.msg);
              
 
             break;
