@@ -99,11 +99,11 @@ var app = {
         userHandler.appid = result;
         $.jStorage.set("appid", userHandler.appid);
         //alert('Callback Success! Result = '+result); 
-        alert('Connected to Server! ID:'+result);
+        //alert('Connected to Server! ID:'+result);
     },
     errorHandler:function(error) {
         alert(error);
-        alert('Error connecting to Server!'+error);
+        //alert('Error connecting to Server!'+error);
 
     },
     onNotificationGCM: function(e) {

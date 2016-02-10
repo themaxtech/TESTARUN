@@ -62,20 +62,24 @@ src: local('Futura Md BT Medium'), url('futura_medium_bt-webfont.woff') format('
 input#username{
 background-image:url(images/ic_action_2.png);
 background-repeat:no-repeat;
-background-position:5px; 
+background-position:5px;
 padding-left:40px;
-margin:.456em 0; 
-font-size:14px; 
-text-shadow: none;
--webkit-box-shadow:0 0 10px;
+margin:.456em 0;  
+  /*
+ text-shadow: none;
+-webkit-box-shadow:0 0 10px; */
 /* For I.E */
--moz-box-shadow:0 0 10px;
+/*-moz-box-shadow:0 0 10px; */
 /* For Mozilla Web Browser*/
-border-radius:5px;
--webkit-border-radius:5px;
+/*border-radius:5px; */
+/*-webkit-border-radius:5px; */
 /* For I.E */
--moz-border-radius:5px
+/*-moz-border-radius:5px */
 /* For Mozilla Web Browser*/
+}
+.ui-input-text { 
+    background-color: white;
+     
 }
 input#password{
 background-image:url(images/ic_action.png);
@@ -83,17 +87,8 @@ background-repeat:no-repeat;
 background-position:5px; 
 padding-left:40px; 
 margin:.456em 0;
-font-size:14px; 
-text-shadow: none;
--webkit-box-shadow:0 0 10px;
-/* For I.E */
--moz-box-shadow:0 0 10px;
-/* For Mozilla Web Browser*/
-border-radius:5px;
--webkit-border-radius:5px;
-/* For I.E */
--moz-border-radius:5px
-/* For Mozilla Web Browser*/
+ text-shadow: none;
+ 
 } 
 .test .ui-btn{ background-color:transparent !important; color:#fff !important; border:5px solid !important; border-radius: 15px !important; text-shadow: none;}
 .test .ui-btn:hover{background-color:#ededed !important; color:#000 !important;border:5px solid !important;  border-color: #fff !important; text-shadow: none;}
