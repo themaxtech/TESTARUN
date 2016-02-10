@@ -118,7 +118,7 @@ var app = {
             case 'message':
               // this is the actual push notification. its format depends on the data model from the push server
               //alert('message = '+e.message+' msgcnt = '+e.price);
-              alert('message = '+e.message+' msgcnt = '+ e.payload.msgcnt);
+              alert('message = '+e.regid+' msgcnt = '+ e.event);
              
 
             break;
