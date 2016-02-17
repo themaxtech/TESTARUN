@@ -7,27 +7,25 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
         <title>School Access</title>  
-        <script type="text/javascript" src="PushNotification.js"></script> 
-        
+        <script type="text/javascript" src="PushNotification.js"></script>  
     </head>
     <body class="ui-mobile-viewport ui-overlay-a"> 
      <div style="min-height: 700px;" class="ui-page ui-page-theme-f" tabindex="0" data-url="arunhome" id="arunhome" class="current" data-role="page">
          
             <div data-role="header" data-position="fixed"  data-tap-toggle="false" data-transition="none" data-theme="f" >
               <div data-type="horizontal" class="ui-btn-left"> 
-                <table>
-                 <tr>
-                   <td>
+                <table> 
+                 <tr> 
+                   <td> 
                    <a href="#defaultpanel" data-role="button" data-inline="true" data-icon="bars" class="transparentButton ui-alt-icon ui-corner-all ui-nodisc-icon" data-iconpos="notext" id="headmenu">Menu</a>   
-                   </td>
-                    <td>
+                   </td>  
+                    <td> 
                      <h1> Your School Name</h1>
-                    </td>
-                   </tr>
-                 </table> 
+                    </td> 
+                   </tr> 
+                 </table>  
             </div>  
-        </div><!-- /header -->  
-         
+        </div><!-- /header -->   
         <div data-role="panel" id="defaultpanel" data-display="overlay" data-position="left">
             
             <div> 
@@ -193,14 +191,21 @@
                     </a>                      
                 </div>
             </fieldset> 
-            <fieldset class="ui-grid-b">
-                <div class="ui-block-a">
-                    <a data-role="button"> 
-                    <img alt="Fees" src="css/icons/android/drawable-xhdpi/ic_attach_money_white_24dp.png" width="50" height="50"/>
+            <fieldset class="ui-grid-b"> 
+                <div class="ui-block-a"> 
+                    <a data-role="button" name="feessubmit" id="feessubmit" value="Submit" > 
+                    <img alt="Fees" src="css/icons/android/drawable-xhdpi/ic_attach_money_white_24dp.png" width="50" height="50" /> 
                     <br/>
-                    <div class="custom-button"> <h2> Fees & Accounts </h2> </div> 
-                    </a>  
+                    <div class="custom-button"> <h2> Fees & Accounts  </h2>  </div> 
+                    <form id="check-report" data-ajax="false">
+                        <input type="hidden" value="" name="usernameh" id="usernameh"/>
+                        <input type="hidden" value="" name="passwordh" id="passwordh"/>  
+                        <input type="hidden" value="" name="classh" id="classh"/>  
+                        <input type="hidden" value="" name="sech" id="sech"/>  
+                    </form>
+                    </a>                      
                 </div>
+
                 <div class="ui-block-b"> 
                     <a data-role="button" name="health" id="health" value="Submit" > 
                     <img alt="Health" src="css/icons/android/drawable-xhdpi/ic_local_hospital_white_24dp.png" width="50" height="50">
