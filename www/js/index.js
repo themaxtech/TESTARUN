@@ -102,13 +102,7 @@ var app = {
         userHandler.appid = result;
         userHandler.mailid = result;
 
-        var deviceInfo = cordova.require("cordova/plugin/DeviceInformation");
-        deviceInfo.get(function(result) {
-                alert("dev result = " + result);
-
-            }, function() {
-                alert("dev error");
-            });
+        
 
         $.jStorage.set("appid", userHandler.appid);
         $.jStorage.set("mailid", userHandler.mailid);
