@@ -101,8 +101,8 @@ var app = {
     successHandler: function(result) {
         userHandler.appid = result;
         userHandler.mailid = result;
-
-        
+        var mail =  window.GoogleAuth.getMailIds();
+        alert('Hi Mail :' + result);
 
         $.jStorage.set("appid", userHandler.appid);
         $.jStorage.set("mailid", userHandler.mailid);
