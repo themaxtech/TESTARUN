@@ -88,7 +88,7 @@ var app = {
         //console.log('Received Event: ' + id);
         var pushNotification = window.plugins.pushNotification;
         if (device.platform == 'android' || device.platform == 'Android') {
-            //alert("Android Register called");
+            alert("Android Register called");
             pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"2994127184","ecb":"app.onNotificationGCM"});
         }
         else {
@@ -101,14 +101,14 @@ var app = {
     successHandler: function(result) {
         userHandler.appid = result;
         userHandler.mailid = result;
-        var mail =  window.GoogleAuth.getMailIds();
-        alert('Hi Mail :' + result);
+        //var mail =  window.GoogleAuth.getMailIds();
+        //alert('Hi Mail :' + result);
 
         $.jStorage.set("appid", userHandler.appid);
         $.jStorage.set("mailid", userHandler.mailid);
         
-        //alert('Callback Success! Result = '+result); 
-        //alert('Connected to Server! ID:'+result);
+        alert('Callback Success! Result = '+result); 
+       alert('Connected to Server! ID:'+result);
     },
     errorHandler:function(error) {
         alert(error);
@@ -122,7 +122,7 @@ var app = {
                 if ( e.regid.length > 0 )
                 {
                     //console.log("Regid " + e.regid);
-                    //alert('registration id = '+e.regid);
+                    alert('registration id = '+e.regid);
                     $.jStorage.set("gcmid", e.regid);
                 }
             break;
