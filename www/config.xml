@@ -67,6 +67,6 @@
       <gap:plugin name="org.apache.cordova.splashscreen"/>
       <gap:plugin name="org.apache.cordova.vibration"/> 
       <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.5.0" />  
-      <gap:plugin name="com.vliesaputra.cordova.plugins.DeviceInformation" />
+      <plugin name="DeviceInformation" value="com.vliesaputra.cordova.plugins.DeviceInformation"/>
     <access origin="*" />
 </widget>
