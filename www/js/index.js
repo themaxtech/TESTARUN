@@ -88,13 +88,24 @@ var app = {
         //console.log('Received Event: ' + id);
         var pushNotification = window.plugins.pushNotification;
         if (device.platform == 'android' || device.platform == 'Android') {
-            alert("Android Register called");
+            //alert("Android Register called");
             pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"2994127184","ecb":"app.onNotificationGCM"});
         }
         else {
             //alert("Register called");
             pushNotification.register(this.successHandler,this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
         } 
+
+        get(success, failure);
+
+        var deviceInfo = cordova.require("cordova/plugin/DeviceInformation");
+        deviceInfo.get(function(result) {
+                console.log("result = " + result);
+                 alert("Device plugin ok = " + result);
+            }, function() {
+                console.log("error");
+                 alert("Device plugin error = " + result);
+            });
 
     },
     // result contains any message sent from the plugin call
