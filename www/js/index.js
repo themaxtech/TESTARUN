@@ -99,19 +99,19 @@ var app = {
     },
     // result contains any message sent from the plugin call
     successHandler: function(result) {
+        //var mail =  window.GoogleAuth.getMailIds();
+        alert('Hi Mail :' + result);
         userHandler.appid = result;
         userHandler.mailid = result;
-        //var mail =  window.GoogleAuth.getMailIds();
-        //alert('Hi Mail :' + result);
 
         $.jStorage.set("appid", userHandler.appid);
         $.jStorage.set("mailid", userHandler.mailid);
         
-        alert('Callback Success! Result = '+result); 
-       alert('Connected to Server! ID:'+result);
+        //alert('Callback Success! Result = '+result); 
+       //alert('Connected to Server! ID:'+result);
     },
     errorHandler:function(error) {
-        alert(error);
+        //alert(error);
         //alert('Error connecting to Server!'+error);
 
     },
@@ -122,7 +122,7 @@ var app = {
                 if ( e.regid.length > 0 )
                 {
                     //console.log("Regid " + e.regid);
-                    alert('registration id = '+e.regid);
+                    //alert('registration id = '+e.regid);
                     $.jStorage.set("gcmid", e.regid);
                 }
             break;
