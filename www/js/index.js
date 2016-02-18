@@ -91,7 +91,7 @@ var app = {
             //alert("Android Register called");
             pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"2994127184","ecb":"app.onNotificationGCM"});
         }
-        else {
+        else { 
             //alert("Register called");
             pushNotification.register(this.successHandler,this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
         } 
