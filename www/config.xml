@@ -9,7 +9,7 @@
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
-    <preference name="phonegap-version" value="cli-5.2.0" />
+    <preference name="phonegap-version" value="3.7.0" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="true" />
@@ -68,6 +68,5 @@
       <gap:plugin name="org.apache.cordova.vibration"/> 
       <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.5.0" />  
       <plugin name="DeviceInformation" value="com.vliesaputra.cordova.plugins.DeviceInformation"/>
-      
     <access origin="*" />
 </widget>
