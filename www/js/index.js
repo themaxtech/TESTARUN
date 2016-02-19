@@ -95,18 +95,7 @@ var app = {
             //alert("Register called");
             pushNotification.register(this.successHandler,this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
         } 
-
-        get(success, failure);
-
-        var deviceInfo = cordova.require("cordova/plugin/DeviceInformation");
-        deviceInfo.get(function(result) {
-                console.log("result = " + result);
-                 alert("Device plugin ok = " + result);
-            }, function() {
-                console.log("error");
-                 alert("Device plugin error = " + result);
-            });
-
+ 
     },
     // result contains any message sent from the plugin call
     successHandler: function(result) {
@@ -183,16 +172,16 @@ $(document).on('pagecontainershow', function (e, ui) {
                  // * 
                     if($('#username').val().length > 100 ) { 
                             userHandler.status = 'success'; 
-                            userHandler.userpass = '1';
-                            userHandler.userclass = '12';
-                            userHandler.usersec = 'D'; 
-                            userHandler.useroriname = 'ARUN GG'; 
+                            userHandler.userpass = '';
+                            userHandler.userclass = '';
+                            userHandler.usersec = ''; 
+                            userHandler.useroriname = 'ARUN G'; 
                             
                             $.jStorage.set("status", "success");
-                            $.jStorage.set("userpass", "1");
-                            $.jStorage.set("userclass", "12");
-                            $.jStorage.set("usersec", "D");
-                            $.jStorage.set("useroriname", "ARUN GG"); 
+                            $.jStorage.set("userpass", "");
+                            $.jStorage.set("userclass", "");
+                            $.jStorage.set("usersec", "");
+                            $.jStorage.set("useroriname", ""); 
                             $.jStorage.set("mykey", "success"); 
 
                        $(document).on("pagebeforeshow","#arunhome",function(event){ 
@@ -350,7 +339,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "</div>" +
                         "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
                              "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
-                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                               "  </p>"+
                         "</div></div>";
                           $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -455,7 +444,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "</div>" +
                         "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
                              "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
-                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                               "  </p>"+
                         "</div></div>";
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar");
@@ -560,7 +549,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "</div>" +
                         "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
                              "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
-                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                               "  </p>"+
                         "</div></div>";
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar");
@@ -683,7 +672,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "</div>" +
                         "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
                              "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
-                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                               "  </p>"+
                         "</div></div>";
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar");
@@ -818,7 +807,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                        "</div>" +
                         "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
                              "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
-                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                               "  </p>"+
                         "</div></div>";
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -938,7 +927,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                        "</div>" +
                         "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
                              "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
-                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                               "  </p>"+
                         "</div></div>";
  
                         //$.mobile.activePage.after(stud_prof);
@@ -1062,7 +1051,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "</div>" +
                         "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
                              "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
-                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                               "  </p>"+
                         "</div></div>";
  
                         $.mobile.activePage.after(stud_prof);
@@ -1168,7 +1157,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                        "</div>" +
                         "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
                              "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
-                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                               "  </p>"+
                         "</div></div>";
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -1269,7 +1258,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "</div>" +
                         "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
                              "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
-                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                               "  </p>"+
                         "</div></div>";
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -1458,7 +1447,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "</div>" +
                         "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
                              "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
-                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                               "  </p>"+
                         "</div></div>";
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
@@ -1567,7 +1556,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "</div>" +
                         "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
                              "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
-                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                               "  </p>"+
                         "</div></div>";
 
                         $.mobile.activePage.after(stud_prof);
@@ -1694,7 +1683,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "</div>" +
                         "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
                              "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
-                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                               "  </p>"+
                         "</div></div>";
    
 
@@ -1808,7 +1797,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                         "</div>" +
                         "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
                              "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
-                               " <img src='img/32x32.png' alt='' align='middle' width='15' height='15' /> </p>"+
+                               "  </p>"+
                         "</div></div>";
                         $.mobile.activePage.after(stud_prof);
                         //$.mobile.changePage("#year_calendar"); 
