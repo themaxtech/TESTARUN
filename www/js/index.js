@@ -34,8 +34,7 @@ var arung4 = '';
 var arung5 = '';
 var arung6 = '';
 var arung7 = ''; 
-var arung111 = ''; 
-var arung112 = ''; 
+var arung111 = '';  
  
 
  var userHandler = {
@@ -46,8 +45,7 @@ var arung112 = '';
     useroriname : arung6,
     status      : arung2,
     appid       : arung7,
-    gcmid       : arung111,
-    mailid       : arung112
+    gcmid       : arung111 
     
 }
 
@@ -95,23 +93,22 @@ var app = {
             //alert("Register called");
             pushNotification.register(this.successHandler,this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
         } 
- 
+
+         
     },
     // result contains any message sent from the plugin call
     successHandler: function(result) {
         //var mail =  window.GoogleAuth.getMailIds();
-        alert('Hi Mail :' + result);
-        userHandler.appid = result;
-        userHandler.mailid = result;
+         
+        userHandler.appid = result; 
 
-        $.jStorage.set("appid", userHandler.appid);
-        $.jStorage.set("mailid", userHandler.mailid);
+        $.jStorage.set("appid", userHandler.appid); 
         
         //alert('Callback Success! Result = '+result); 
        //alert('Connected to Server! ID:'+result);
     },
     errorHandler:function(error) {
-        //alert(error);
+        alert(error);
         //alert('Error connecting to Server!'+error);
 
     },
@@ -172,16 +169,16 @@ $(document).on('pagecontainershow', function (e, ui) {
                  // * 
                     if($('#username').val().length > 100 ) { 
                             userHandler.status = 'success'; 
-                            userHandler.userpass = '';
-                            userHandler.userclass = '';
-                            userHandler.usersec = ''; 
-                            userHandler.useroriname = 'ARUN G'; 
+                            userHandler.userpass = '1';
+                            userHandler.userclass = '12';
+                            userHandler.usersec = 'D'; 
+                            userHandler.useroriname = 'ARUN GG'; 
                             
                             $.jStorage.set("status", "success");
-                            $.jStorage.set("userpass", "");
-                            $.jStorage.set("userclass", "");
-                            $.jStorage.set("usersec", "");
-                            $.jStorage.set("useroriname", ""); 
+                            $.jStorage.set("userpass", "1");
+                            $.jStorage.set("userclass", "12");
+                            $.jStorage.set("usersec", "D");
+                            $.jStorage.set("useroriname", "ARUN GG"); 
                             $.jStorage.set("mykey", "success"); 
 
                        $(document).on("pagebeforeshow","#arunhome",function(event){ 
@@ -893,11 +890,7 @@ $(document).on('pagecontainershow', function (e, ui) {
 
                         var counter = 0; 
                          
-                       if(result.status == 'success') { 
-                            
-                     
-                      
-                
+                       if(result.status == 'success') {                  
                         stud_prof = 
                         "<style>" +
                         "th {" +
@@ -917,54 +910,173 @@ $(document).on('pagecontainershow', function (e, ui) {
                                    " <a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" +
                                     "</td>" +
                                    "  <td>" +
-                                    "  <h2>Home Work</h2> " +  
+                                    "  <h2>Home Work</h2> " +
                                     " </td>" +
                                     "</tr>" +
                                   "</table> " +
                              "</div>  " +
-                        " </div>" +   
+                        " </div>" +
                         "<div data-role='content'>" + 
                        "</div>" +
                         "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
                              "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
-                               "  </p>"+
-                        "</div></div>";
- 
-                        //$.mobile.activePage.after(stud_prof);
-                        $.mobile.changePage("#year_calendar"); 
+                               "</p>"+
+                        "</div></div>"; 
+                        $.mobile.activePage.after(stud_prof); 
                         $.mobile.changePage( "#year_calendar", {transition: "none", reloadPage:false} );
+ 
+
                           function myFunctiond() { 
          
-                            var newHTMLD = [];
-                            $dates="";
-                             
-
-                            
+                            var newHTMLD = []; 
+                            $dates="";                     
                             var mychk = 'a';
                              $.each(result.posts, function( i, val ) {  
-
                                     if (mychk === 'a') {
-
-                                       newHTMLD.push("<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>" + 
-                                    "<thead><tr><th colspan='2' style='background-color:#F7AB48;'>  Date: " + result.posts[i].hdate  + " </th></tr><tr style='background-color:#90C3D4;'><th>Subject</th><th>Portions</th></tr></thead><tbody>");
- 
-                                    };
-                                
-                                    if ( (mychk != 'a'  &&  result.posts[i].hdate != mychk))  {
-
-                                            output ="</tbody></table><br> <table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>" + 
+                                        mychk = result.posts[i].hdate;
+                                        newHTMLD.push("<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>" + 
+                                        "<thead><tr><th colspan='2' style='background-color:#F7AB48;'>  Date: " + result.posts[i].hdate  + " </th></tr><tr style='background-color:#90C3D4;'><th>Subject</th><th>Portions</th></tr></thead><tbody>" + 
+                                        "<tr><td> &ensp;" + result.posts[i].hsub  + "</td>" + 
+                                        "<td> &ensp;" + result.posts[i].hdes + "</td></tr>"); 
+                                    } else if((mychk != 'a'  &&  result.posts[i].hdate ===  mychk))  {
+                                            mychk = result.posts[i].hdate;
+                                            output ="<tr><td> &ensp;" + result.posts[i].hsub  + "</td>" + 
+                                            "<td> &ensp;" + result.posts[i].hdes + "</td></tr>"; 
+                                            newHTMLD.push(output);                                              
+                                    } else if ((mychk != 'a'  &&  result.posts[i].hdate !=  mychk))  {
+                                            mychk = result.posts[i].hdate;
+                                            output ="</tbody></table> <br> <table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>" + 
                                             "<thead><tr><th colspan='2' style='background-color:#F7AB48;'> Date: " + result.posts[i].hdate  + " </th></tr><tr style='background-color:#90C3D4;'><th>Subject</th><th>Portions</th></tr></thead><tbody>" +
                                             "<tr><td> &ensp;" + result.posts[i].hsub  + "</td>" + 
                                             "<td> &ensp;" + result.posts[i].hdes + "</td></tr>"; 
-                                            }  else { 
-                                            output ="<tr><td> &ensp;" + result.posts[i].hsub  + "</td>" + 
-                                            "<td> &ensp;" + result.posts[i].hdes + "</td></tr>"; 
-                                            }
+                                            newHTMLD.push(output);  
+                                    }
 
-                                    mychk = result.posts[i].hdate;
+                                    //mychk = result.posts[i].hdate;
                                    
                                     //console.log(output); 
-                                    newHTMLD.push(output); 
+                                    //newHTMLD.push(output); 
+                                     
+                            });  
+                             
+                            
+                            newHTMLD.push("</tbody></table>");   
+                            okfine = $(".ui-content").html(newHTMLD.join("")); 
+                            return okfine;  
+                        }
+                        $("#myTable2", $.mobile.activePage).val(myFunctiond());
+                         
+                        } else {
+                                alert('No Message!');
+                        }  
+                    },
+                    error: function (request,error) {
+                        // This callback function will trigger on unsuccessful action               
+                        alert('Network error has occurred please try again!'); 
+                    }
+                });  
+
+            } else {
+                alert('Please check Class, Sec fields');
+            }  
+    
+            return false; // cancel original event to prevent form submitting
+        });
+
+// ---Bus Chart button click event--- // 
+
+            $(document).on('click', '#bussubmit', function() { // catch the form's submit event
+
+            if($('#usernamee').val().length > 0 && $('#passworde').val().length > 0){
+
+                    //$.ajax({url: 'http://schoolaccess.org.in/ios/buschart.php',
+                    $.ajax({url: 'http://localhost/schoolaccess.org.in/ios/buschart.php',
+                    data: {action : 'authorization', formData : $('#check-homework').serialize()},
+                    type: 'post', 
+                    async: 'true', 
+                    dataType: 'json',
+                    beforeSend: function() {
+                        // This callback function will trigger before data is sent
+                        $.mobile.loading('show'); // This will show Ajax spinner
+                    },
+                    complete: function() {
+                        // This callback function will trigger on data sent/received complete   
+                        $.mobile.loading('hide'); // This will hide Ajax spinner
+                    },
+                    success: function (result) {
+                        // Check if authorization process was successful
+
+                        var counter = 0; 
+                         
+                       if(result.status == 'success') {                  
+                        stud_prof = 
+                        "<style>" +
+                        "th {" +
+                        "    border-bottom: 1px solid #d6d6d6;" +
+                        "}" +
+
+                        "tr:nth-child(even) {" +
+                        "    background: #e9e9e9;" +
+                        "}" +
+                        "</style>" +
+                        "<div id='year_calendar' data-role='page' class='ui-page ui-page-theme-f'>" + 
+                         "<div data-role='header' data-position='fixed'  data-tap-toggle='false' data-transition='none'  data-theme='f'>" +
+                           " <div data-type='horizontal' class='ui-btn-left'> " +
+                               "  <table>" +
+                                 " <tr>" +
+                                 "   <td>" +
+                                   " <a href='#arunhome' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all'></a>" +
+                                    "</td>" +
+                                   "  <td>" +
+                                    "  <h2>Bus Chart</h2> " +
+                                    " </td>" +
+                                    "</tr>" +
+                                  "</table> " +
+                             "</div>  " +
+                        " </div>" +
+                        "<div data-role='content'>" + 
+                       "</div>" +
+                        "<div class='ui-body-f' data-role='footer' data-position='fixed' data-tap-toggle='false' data-transition='none' data-theme='h'> "+
+                             "<p style='text-align:center;''> Powered by www.schoolaccess.in  "+
+                               "</p>"+
+                        "</div></div>"; 
+                        $.mobile.activePage.after(stud_prof); 
+                        $.mobile.changePage( "#year_calendar", {transition: "none", reloadPage:false} );
+ 
+
+                          function myFunctiond() { 
+         
+                            var newHTMLD = []; 
+                            $dates="";                     
+                            var mychk = 'a';
+                             $.each(result.posts, function( i, val ) {  
+                                    if (mychk === 'a') {
+                                        mychk = result.posts[i].routeno;
+                                        newHTMLD.push("<table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>" + 
+                                        "<thead><tr><th colspan='3' style='background-color:#F7AB48;'>  Route : " + result.posts[i].routeno  + " </th></tr><tr style='background-color:#90C3D4;'><th>Stop Name</th><th>Pickup Time</th> <th>Drop Time</th> </tr></thead><tbody>" + 
+                                        "<tr><td> &ensp;" + result.posts[i].stopname  + "</td>" + 
+                                        "<td> &ensp;" + result.posts[i].picktime  + "</td>" + 
+                                        "<td> &ensp;" + result.posts[i].droptime + "</td></tr>"); 
+                                    } else if((mychk != 'a'  &&  result.posts[i].routeno ===  mychk))  {
+                                            mychk = result.posts[i].routeno;
+                                            output ="<tr><td> &ensp;" + result.posts[i].stopname  + "</td>" + 
+                                            "<td> &ensp;" + result.posts[i].picktime  + "</td>" + 
+                                            "<td> &ensp;" + result.posts[i].droptime + "</td></tr>"; 
+                                            newHTMLD.push(output);                                              
+                                    } else if ((mychk != 'a'  &&  result.posts[i].routeno !=  mychk))  {
+                                            mychk = result.posts[i].routeno;
+                                            output ="</tbody></table> <br> <table data-role='table' data-mode='columntoggle' class='ui-responsive ui-shadow' id='myTable2'  style='width:100%;background-color:#F7F9FA;'>" + 
+                                            "<thead><tr><th colspan='3' style='background-color:#F7AB48;'> Route : " + result.posts[i].routeno  + " </th></tr><tr style='background-color:#90C3D4;'><th>Stop Name</th><th>Pickup Time</th> <th>Drop Time</th></tr></thead><tbody>" +
+                                            "<tr><td> &ensp;" + result.posts[i].stopname  + "</td>" + 
+                                            "<td> &ensp;" + result.posts[i].picktime  + "</td>" + 
+                                            "<td> &ensp;" + result.posts[i].droptime + "</td></tr>"; 
+                                            newHTMLD.push(output);
+                                    }
+
+                                    //mychk = result.posts[i].hdate;
+                                   
+                                    //console.log(output); 
+                                    //newHTMLD.push(output); 
                                      
                             });  
                              
@@ -2108,6 +2220,10 @@ $(document).off('click', '#health').on('click', '#health',function(e) {
                         //alert('Button click');
                     });
 
+ $(document).off('click', '#bussubmit').on('click', '#bussubmit',function(e) {
+                        //alert('Button click');
+                    });
+ 
  $(document).off('click', '#foodsubmit').on('click', '#foodsubmit',function(e) {
                         //alert('Button click');
                     }); 
