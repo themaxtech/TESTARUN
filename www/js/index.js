@@ -989,8 +989,8 @@ $(document).on('pagecontainershow', function (e, ui) {
 
             if($('#usernamee').val().length > 0 && $('#passworde').val().length > 0){
 
-                    //$.ajax({url: 'http://schoolaccess.org.in/ios/buschart.php',
-                    $.ajax({url: 'http://localhost/schoolaccess.org.in/ios/buschart.php',
+                    $.ajax({url: 'http://schoolaccess.org.in/ios/buschart.php',
+                    //$.ajax({url: 'http://localhost/schoolaccess.org.in/ios/buschart.php',
                     data: {action : 'authorization', formData : $('#check-homework').serialize()},
                     type: 'post', 
                     async: 'true', 
