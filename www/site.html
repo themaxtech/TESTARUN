@@ -21,6 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--/script-->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
 <script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){		
@@ -49,9 +50,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
 	<!--start-home-->
 	<div id="home" class="header">
-		<div class="header-top">
-			<div class="container">
-				<span class="menu"></span>
+		<div class="header-top"> 
+			<div class="container"> 
+				<span> <a href='index.html' class='ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all' rel="external"></a> </span>
+				<span class="menu" style="margin-top:-35px;" ></span>
 				<div class="top-menu">
 				<ul class="cl-effect-16">
 						<li><a class="active" href="site.html" data-hover="Home">Home</a></li> 
@@ -163,8 +165,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					     <img src="images/ab.jpg" alt=""/>
 						 <div class="quote-author-info padding5"><p>
 						 	THE MAXTECH is proficient Mobile App development and software Solution Company located in Tirupur, Coimbatore & Chennai - India. 
-						 </p>
-						 
+						 </p> 
 						</div>
 					   </div>
 					   <div class="col-md-7 info">
@@ -231,7 +232,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    <div class="container"> 
 	    	<div class="col-md-6 contact-grid">
 	    			<h1> Contact Us </h1> <br>
-					<form>
+					<form id="check-contact" name="check-contact" class="ui-body ui-body-a ui-corner-all" data-ajax="false">
 						<p class="your-para">Your Name :</p>
 						<input type="text" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
 						<p class="your-para">Your Mail :</p>
@@ -239,7 +240,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<p class="your-para">Your Message :</p>
 						<textarea cols="77" rows="6" onfocus="this.value='';" onblur="if (this.value == '') {this.value = '';}"></textarea>
 						<div class="send">
-						<input type="submit" value="Send" >
+
+						<button type="submit" name="leavesubmit" id="leavesubmit" data-theme="b" value="Send" >Submit</button>						
+						<input type="submit" value="Send">
+
 						</div>
 					</form>
 			</div> 
@@ -278,6 +282,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		    <p>&copy; 2016 - All Rights Reserved | Design By <a href="http://themaxtech.com/">The Maxtech</a></p>
 		</div>
 		<!--//footer-->
+ 
+
 		<!--start-smooth-scrolling-->
 		<script type="text/javascript">
 			$(document).ready(function() {
