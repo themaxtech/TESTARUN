@@ -85,11 +85,21 @@ var app = {
 
         //console.log('Received Event: ' + id);
         var pushNotification = window.plugins.pushNotification;
-        if (device.platform == 'android' || device.platform == 'Android') {
+        if (device.platform == 'android' || device.platform == 'Android' ) {
             //alert("Android Register called");
             pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"2994127184","ecb":"app.onNotificationGCM"});
-        }
-        else { 
+        } else if(device.platform == 'Win32NT'){
+            alert("Windows Register called");
+            pushNotification.register(
+                channelHandler,
+                errorHandler,
+                {
+                    "channelName": "channelName",
+                    "ecb": onNotificationWP8,
+                    "uccb": channelHandler,
+                    "errcb": jsonErrorHandler
+                });
+        } else { 
             //alert("Register called");
             pushNotification.register(this.successHandler,this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
         } 
@@ -157,6 +167,24 @@ var app = {
             var snd = new Media(event.sound);
             snd.play();
         }
+    },
+    //handle MPNS notifications for WP8
+    function onNotificationWP8(e) {
+
+        if (e.type == "toast" && e.jsonContent) {
+            pushNotification.showToastNotification(successHandler, errorHandler,
+            {
+                "Title": e.jsonContent["wp:Text1"], "Subtitle": e.jsonContent["wp:Text2"], "NavigationUri": e.jsonContent["wp:Param"]
+            });
+            }
+
+        if (e.type == "raw" && e.jsonContent) {
+            alert(e.jsonContent.Body);
+        }
+    },
+    function jsonErrorHandler(error) {
+        $("#app-status-ul").append('<li style="color:red;">error:' + error.code + '</li>');
+        $("#app-status-ul").append('<li style="color:red;">error:' + error.message + '</li>');
     }
 };
 

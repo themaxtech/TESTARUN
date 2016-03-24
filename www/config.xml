@@ -28,7 +28,8 @@
     <!-- Don't hide the O/S's status bar -->
     <preference name="fullscreen" value="false" />
     <!-- iOS: Obey the app's viewport meta tag -->
-    <preference name="EnableViewportScale" value="true"/> 
+    <preference name="EnableViewportScale" value="true"/>
+    <preference name="WindowsToastCapable" value="true"/> 
     <icon src="icon.png" />
     
     <icon gap:platform="ios" height="57" src="res/icon/ios/icon-57.png" width="57" />
