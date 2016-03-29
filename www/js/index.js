@@ -97,6 +97,8 @@ var app = {
             pushNotification.register(this.successHandler, this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
         } 
 
+
+
          
     },
     // result contains any message sent from the plugin call
@@ -108,7 +110,7 @@ var app = {
         //alert('Callback Success! Result = '+result); 
         //alert('Connected to Server! ID:'+ result);
         alert('Connected to Server! ID:'+ result.uri);
-        
+
     },
     errorHandler:function(error) {
         alert(error);
@@ -161,8 +163,18 @@ var app = {
             snd.play();
         }
     } ,
-    onNotificationWP8: function(event) {
-        alert("hiii");
+    onNotificationWP8: function(e) {
+        //alert("hiii");
+        if (e.type == "toast" && e.jsonContent) {
+        pushNotification.showToastNotification(successHandler, errorHandler,
+        {
+            "Title": e.jsonContent["wp:Text1"], "Subtitle": e.jsonContent["wp:Text2"], "NavigationUri": e.jsonContent["wp:Param"]
+        });
+        }
+
+        if (e.type == "raw" && e.jsonContent) {
+            alert(e.jsonContent.Body);
+        }
 
     }
     
