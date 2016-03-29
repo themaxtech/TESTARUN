@@ -90,18 +90,10 @@ var app = {
             pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"2994127184","ecb":"app.onNotificationGCM"});
         } else if(device.platform == "Win32NT"){
             //alert("Windows Register called");
-            pushNotification.register(
-                channelHandler,
-                errorHandler,
-                {
-                    "channelName": "channelName",
-                    "ecb": onNotificationWP8,
-                    "uccb": channelHandler,
-                    "errcb": jsonErrorHandler
-                });
+            pushNotification.register(this.successHandler, this.errorHandler,{"channelName": "channelName","ecb": "app.onNotificationWP8","uccb": "app.channelHandler","errcb": "app.jsonErrorHandler"});
         } else { 
             //alert("Register called");
-            pushNotification.register(this.successHandler,this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
+            pushNotification.register(this.successHandler, this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
         } 
 
          
@@ -115,10 +107,10 @@ var app = {
         $.jStorage.set("appid", userHandler.appid); 
         
         //alert('Callback Success! Result = '+result); 
-       //alert('Connected to Server! ID:'+result);
+       alert('Connected to Server! ID:'+result);
     },
     errorHandler:function(error) {
-        //alert(error);
+        alert(error);
         //alert('Error connecting to Server!'+error);
 
     },
@@ -167,14 +159,12 @@ var app = {
             var snd = new Media(event.sound);
             snd.play();
         }
-    },
-    //handle MPNS notifications for WP8 
-    channelHandler: function(event) {
-        var uri = event.uri;
-        alert("URI " + uri);
-        //console.log("UUUUURRRRRRRRRRRIIIIIIIII  :" + uri);
+    } ,
+    onNotificationWP8: function(event) {
+        alert("hiii");
 
     }
+    
 };
 
 
