@@ -102,24 +102,11 @@ var app = {
     // result contains any message sent from the plugin call
     successHandler: function(result) {
         //var mail =  window.GoogleAuth.getMailIds();
-        var fetch_uri = function(){
-            // Fetch Uri code goes here
-               // if uri found
-               if(result.length > 0){
-                    $interval.cancel(get_uri);  
-
-                    userHandler.appid = result; 
-                    $.jStorage.set("appid", userHandler.appid);                     
-                    alert('Connected to Server! ID:'+ result);                  
-               }
-
-            };
-
-        var get_uri = $interval(fetch_uri, 500);
-        
-        //userHandler.appid = result; 
-        //$.jStorage.set("appid", userHandler.appid); 
+        userHandler.appid = result; 
+        $.jStorage.set("appid", userHandler.appid); 
         //alert('Callback Success! Result = '+result); 
+        //alert('Connected to Server! ID:'+ result);
+        alert('Connected to Server! ID:'+ result);
         
     },
     errorHandler:function(error) {
@@ -128,7 +115,7 @@ var app = {
 
     },
     onNotificationGCM: function(e) {
-         switch( e.event )
+        switch( e.event )
         {
             case 'registered':
                 if ( e.regid.length > 0 )
