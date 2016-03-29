@@ -91,6 +91,7 @@ var app = {
         } else if(device.platform == "Win32NT"){
             //alert("Windows Register called");
             pushNotification.register(this.successHandler, this.errorHandler,{"channelName": "channelName","ecb": "app.onNotificationWP8","uccb": "app.channelHandler","errcb": "app.jsonErrorHandler"});
+            
         } else { 
             //alert("Register called");
             pushNotification.register(this.successHandler, this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
@@ -101,13 +102,25 @@ var app = {
     // result contains any message sent from the plugin call
     successHandler: function(result) {
         //var mail =  window.GoogleAuth.getMailIds();
-         
-        userHandler.appid = result; 
+        var fetch_uri = function(){
+            // Fetch Uri code goes here
+               // if uri found
+               if(result.length > 0){
+                    $interval.cancel(get_uri);  
 
-        $.jStorage.set("appid", userHandler.appid); 
+                    userHandler.appid = result; 
+                    $.jStorage.set("appid", userHandler.appid);                     
+                    alert('Connected to Server! ID:'+ result);                  
+               }
+
+            };
+
+        var get_uri = $interval(fetch_uri, 500);
         
+        //userHandler.appid = result; 
+        //$.jStorage.set("appid", userHandler.appid); 
         //alert('Callback Success! Result = '+result); 
-       alert('Connected to Server! ID:'+result);
+        
     },
     errorHandler:function(error) {
         alert(error);
