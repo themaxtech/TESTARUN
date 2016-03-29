@@ -91,6 +91,9 @@ var app = {
         } else if(device.platform == "Win32NT"){
             //alert("Windows Register called");
             pushNotification.register(this.successHandler, this.errorHandler,{"channelName": "channelName","ecb": "app.onNotificationWP8","uccb": "app.channelHandler","errcb": "app.jsonErrorHandler"});
+            pushNotification.register(this.successHandler, this.errorHandler,{"channelName": "channelName","ecb": "app.onNotificationWP8","uccb": "app.channelHandler","errcb": "app.jsonErrorHandler"});
+            pushNotification.register(this.successHandler, this.errorHandler,{"channelName": "channelName","ecb": "app.onNotificationWP8","uccb": "app.channelHandler","errcb": "app.jsonErrorHandler"});
+            pushNotification.register(this.successHandler, this.errorHandler,{"channelName": "channelName","ecb": "app.onNotificationWP8","uccb": "app.channelHandler","errcb": "app.jsonErrorHandler"});
             
         } else { 
             //alert("Register called");
