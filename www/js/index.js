@@ -103,10 +103,11 @@ var app = {
     successHandler: function(result) {
         //var mail =  window.GoogleAuth.getMailIds();
         userHandler.appid = result; 
+        userHandler.appid =  result.uri; 
         $.jStorage.set("appid", userHandler.appid); 
         //alert('Callback Success! Result = '+result); 
         //alert('Connected to Server! ID:'+ result);
-        alert('Connected to Server! ID:'+ result);
+        alert('Connected to Server! ID:'+ result.uri);
         
     },
     errorHandler:function(error) {
