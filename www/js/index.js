@@ -118,7 +118,7 @@ var app = {
        //alert('Connected to Server! ID:'+result);
     },
     errorHandler:function(error) {
-        alert(error);
+        //alert(error);
         //alert('Error connecting to Server!'+error);
 
     },
@@ -168,24 +168,12 @@ var app = {
             snd.play();
         }
     },
-    //handle MPNS notifications for WP8
-    onNotificationWP8: function(e) { 
+    //handle MPNS notifications for WP8 
+    channelHandler: function(event) {
+        var uri = event.uri;
+        alert("URI " + uri);
+        //console.log("UUUUURRRRRRRRRRRIIIIIIIII  :" + uri);
 
-        if (e.type == "toast" && e.jsonContent) {
-            pushNotification.showToastNotification(successHandler, errorHandler,
-            {
-                "Title": e.jsonContent["wp:Text1"], "Subtitle": e.jsonContent["wp:Text2"], "NavigationUri": e.jsonContent["wp:Param"]
-            });
-            }
-
-        if (e.type == "raw" && e.jsonContent) {
-            alert(e.jsonContent.Body);
-        }
-    },
-    jsonErrorHandler: function(error) {  
-        alert("aiyyo");
-        //$("#app-status-ul").append('<li style="color:red;">error:' + error.code + '</li>');
-        //$("#app-status-ul").append('<li style="color:red;">error:' + error.message + '</li>');
     }
 };
 
