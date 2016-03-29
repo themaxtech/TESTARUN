@@ -169,7 +169,7 @@ var app = {
         }
     },
     //handle MPNS notifications for WP8
-    function onNotificationWP8(e) {
+    onNotificationWP8: function(e) { 
 
         if (e.type == "toast" && e.jsonContent) {
             pushNotification.showToastNotification(successHandler, errorHandler,
@@ -182,10 +182,10 @@ var app = {
             alert(e.jsonContent.Body);
         }
     },
-    function jsonErrorHandler(error) {
+    jsonErrorHandler: function(error) {  
         alert("aiyyo");
-        $("#app-status-ul").append('<li style="color:red;">error:' + error.code + '</li>');
-        $("#app-status-ul").append('<li style="color:red;">error:' + error.message + '</li>');
+        //$("#app-status-ul").append('<li style="color:red;">error:' + error.code + '</li>');
+        //$("#app-status-ul").append('<li style="color:red;">error:' + error.message + '</li>');
     }
 };
 
