@@ -88,7 +88,18 @@ var app = {
         if (device.platform == 'android' || device.platform == 'Android' ) {
             //alert("Android Register called");
             pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"2994127184","ecb":"app.onNotificationGCM"});
-        }  else { 
+        } else if(device.platform == "Win32NT"){
+            alert("Windows Register called");
+            pushNotification.register(
+                channelHandler,
+                errorHandler,
+                {
+                    "channelName": "channelName",
+                    "ecb": onNotificationWP8,
+                    "uccb": channelHandler,
+                    "errcb": jsonErrorHandler
+                });
+        } else { 
             //alert("Register called");
             pushNotification.register(this.successHandler,this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
         } 
