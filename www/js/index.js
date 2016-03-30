@@ -36,7 +36,7 @@ var arung6 = '';
 var arung7 = ''; 
 var arung111 = '';
 var arung222 = '';
- 
+var newarun = ""; 
 
  var userHandler = {
     username    : arung1, 
@@ -219,7 +219,8 @@ $(document).on('pagecontainershow', function (e, ui) {
 
                 arung7   = $.jStorage.get("appid");
                 //arung111 = $.jStorage.get("gcmid");
-                arung222 = $.jStorage.get("wpnid"); 
+                arung222 = $.jStorage.get("wpnid");
+                newarun =  encodeURIComponent($.jStorage.get("wpnid"));
                 userHandler.appid = $.jStorage.get("appid"); 
                 //userHandler.gcmid = $.jStorage.get("gcmid"); 
                 //userHandler.wpnid = $.jStorage.get("wpnid"); 
@@ -228,7 +229,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                     //$.ajax({url: 'http://schoolaccess.org.in/ios/auth.php',
                     //$.ajax({url: 'http://192.168.0.101:80/schoolaccess.org.in/ios/auth.php',
                     $.ajax({url: 'http://schoolaccess.org.in/ios/auth.php',
-                    data: {action : 'authorization', deviceid: userHandler.appid, gcmid: userHandler.gcmid, wpnid: arung222, formData : $('#check-user').serialize()},
+                    data: {action : 'authorization', deviceid: userHandler.appid, gcmid: userHandler.gcmid, wpnid: newarun, formData : $('#check-user').serialize()},
                     type: 'post',
                     async: 'true',
                     dataType: 'json',
@@ -275,7 +276,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                     },
                     error: function (request,error) {
                         // This callback function will trigger on unsuccessful action               
-                        alert('Network error try again!' + request );
+                        alert('Network error try again!' );
                         
                     }
                 });
