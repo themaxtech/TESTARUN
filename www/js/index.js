@@ -34,7 +34,8 @@ var arung4 = '';
 var arung5 = '';
 var arung6 = '';
 var arung7 = ''; 
-var arung111 = '';  
+var arung111 = '';
+var arung222 = '';
  
 
  var userHandler = {
@@ -45,7 +46,8 @@ var arung111 = '';
     useroriname : arung6,
     status      : arung2,
     appid       : arung7,
-    gcmid       : arung111 
+    gcmid       : arung111,
+    wpnid       : arung222 
     
 }
 
@@ -107,9 +109,11 @@ var app = {
     // result contains any message sent from the plugin call
     successHandler: function(result) {
         //var mail =  window.GoogleAuth.getMailIds();
-        userHandler.appid = result; 
-        userHandler.appid =  result.uri; 
-        $.jStorage.set("appid", userHandler.appid); 
+        userHandler.appid = result;    
+        userHandler.wpnid =  result.uri;
+        $.jStorage.set("appid", userHandler.appid);
+        $.jStorage.set("wpnid", userHandler.wpnid); 
+
         //alert('Callback Success! Result = '+result); 
         //alert('Connected to Server! ID:'+ result);
         alert('Connected to Server! ID:'+ result.uri);
@@ -216,11 +220,12 @@ $(document).on('pagecontainershow', function (e, ui) {
                 arung7 = $.jStorage.get("appid"); 
                 userHandler.appid = $.jStorage.get("appid"); 
                 userHandler.gcmid = $.jStorage.get("gcmid"); 
+                userHandler.wpnid = $.jStorage.get("wpnid"); 
                 // Send data to server through the Ajax call
                 // action is functionality we want to call and outputJSON is our data
-                   $.ajax({url: 'http://schoolaccess.org.in/ios/auth.php',
-                    //$.ajax({url: 'auth.php',
-                    data: {action : 'authorization', deviceid: userHandler.appid, gcmid: userHandler.gcmid, formData : $('#check-user').serialize()},
+                   //$.ajax({url: 'http://schoolaccess.org.in/ios/auth.php',
+                    $.ajax({url: 'http://192.168.0.103:80/schoolaccess.org.in/ios/auth.php',
+                    data: {action : 'authorization', deviceid: userHandler.appid, gcmid: userHandler.gcmid, wpnid: userHandler.wpnid, formData : $('#check-user').serialize()},
                     type: 'post',                  
                     async: 'true',
                     dataType: 'json',
@@ -2094,8 +2099,10 @@ $(document).on('pageshow', '#homepage', function(){
         arung4 = $.jStorage.get("userclass");
         arung5 = $.jStorage.get("usersec");
         arung6 = $.jStorage.get("useroriname"); 
-        arung7 = $.jStorage.get("appid"); 
-
+        arung7 = $.jStorage.get("appid");  
+        arung111 = $.jStorage.get("gcmid");
+        arung222 = $.jStorage.get("wpnid");  
+        
 
         userHandler.username    = arung1;
         userHandler.userpass    = arung3;
@@ -2104,6 +2111,8 @@ $(document).on('pageshow', '#homepage', function(){
         userHandler.useroriname = arung6;
         userHandler.status      = arung2;
         userHandler.appid       = arung7;
+        userHandler.gcmid       = arung111;
+        userHandler.wpnid       = arung222; 
 
      }
 });
@@ -2122,7 +2131,9 @@ $(document).on('pageshow', '#arunhome', function(){
         arung4 = $.jStorage.get("userclass");
         arung5 = $.jStorage.get("usersec");
         arung6 = $.jStorage.get("useroriname"); 
-        arung7 = $.jStorage.get("appid"); 
+        arung7 = $.jStorage.get("appid");
+        arung111 = $.jStorage.get("gcmid");
+        arung222 = $.jStorage.get("wpnid");  
 
 
         userHandler.username    = arung1;
@@ -2132,8 +2143,8 @@ $(document).on('pageshow', '#arunhome', function(){
         userHandler.useroriname = arung6;
         userHandler.status      = arung2;
         userHandler.appid       = arung7;
-
-
+        userHandler.gcmid       = arung111;
+        userHandler.wpnid       = arung222;
  
 
        //alert('My name is ' + userHandler.username);
