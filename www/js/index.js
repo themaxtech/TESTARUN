@@ -220,7 +220,6 @@ $(document).on('pagecontainershow', function (e, ui) {
                 arung7   = $.jStorage.get("appid");
                 //arung111 = $.jStorage.get("gcmid");
                 arung222 = $.jStorage.get("wpnid"); 
-                alert("hii" + arung222);
                 userHandler.appid = $.jStorage.get("appid"); 
                 //userHandler.gcmid = $.jStorage.get("gcmid"); 
                 //userHandler.wpnid = $.jStorage.get("wpnid"); 
@@ -276,7 +275,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                     },
                     error: function (request,error) {
                         // This callback function will trigger on unsuccessful action               
-                        alert('Network error try again!');
+                        alert('Network error try again!' + error );
                         
                     }
                 });
