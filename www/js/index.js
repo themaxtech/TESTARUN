@@ -217,14 +217,17 @@ $(document).on('pagecontainershow', function (e, ui) {
                 userHandler.username = $('#username').val();
                 $.jStorage.set("username", userHandler.username);
 
-                arung7 = $.jStorage.get("appid"); 
+                arung7   = $.jStorage.get("appid");
+                //arung111 = $.jStorage.get("gcmid");
+                //arung222 = $.jStorage.get("wpnid"); 
+                
                 userHandler.appid = $.jStorage.get("appid"); 
-                userHandler.gcmid = $.jStorage.get("gcmid"); 
-                userHandler.wpnid = $.jStorage.get("wpnid"); 
+                //userHandler.gcmid = $.jStorage.get("gcmid"); 
+                //userHandler.wpnid = $.jStorage.get("wpnid"); 
                 // Send data to server through the Ajax call
                 // action is functionality we want to call and outputJSON is our data
-                    $.ajax({url: 'http://schoolaccess.org.in/ios/auth.php',
-                    //$.ajax({url: 'http://192.168.0.103:80/schoolaccess.org.in/ios/auth.php',
+                    //$.ajax({url: 'http://schoolaccess.org.in/ios/auth.php',
+                    $.ajax({url: 'http://192.168.0.103:80/schoolaccess.org.in/ios/auth.php',
                     data: {action : 'authorization', deviceid: userHandler.appid, gcmid: userHandler.gcmid, wpnid: userHandler.wpnid, formData : $('#check-user').serialize()},
                     type: 'post',                  
                     async: 'true',
