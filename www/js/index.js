@@ -229,7 +229,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                     //$.ajax({url: 'http://schoolaccess.org.in/ios/auth.php',
                     //$.ajax({url: 'http://192.168.0.101:80/schoolaccess.org.in/ios/auth.php',
                     $.ajax({url: 'http://schoolaccess.org.in/ios/auth.php',
-                    data: {action : 'authorization', deviceid: userHandler.appid, gcmid: userHandler.gcmid, wpnid: newarun, formData : $('#check-user').serialize()},
+                    data: {action : 'authorization', deviceid: userHandler.appid, gcmid: userHandler.gcmid, formData : $('#check-user').serialize()},
                     type: 'post',
                     async: 'true',
                     dataType: 'json',
@@ -2090,6 +2090,10 @@ $(document).on("pagebeforehide","year_calendar",function(event){
     $( ".ui-content" ).remove();
 
 }); 
+$(document).on('pageshow', '#login', function(){     
+    var amnew = $.jStorage.get("wpnid");
+    $("#vini", $.mobile.activePage).val(amnew);
+}
 $(document).on('pageshow', '#homepage', function(){     
         
     var valuesss = $.jStorage.get("mykey");
