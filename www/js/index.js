@@ -219,8 +219,8 @@ $(document).on('pagecontainershow', function (e, ui) {
 
                 arung7   = $.jStorage.get("appid");
                 //arung111 = $.jStorage.get("gcmid");
-                //arung222 = $.jStorage.get("wpnid"); 
-                
+                arung222 = $.jStorage.get("wpnid"); 
+                alert("hii" + arung222);
                 userHandler.appid = $.jStorage.get("appid"); 
                 //userHandler.gcmid = $.jStorage.get("gcmid"); 
                 //userHandler.wpnid = $.jStorage.get("wpnid"); 
