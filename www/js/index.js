@@ -228,7 +228,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                     //$.ajax({url: 'http://schoolaccess.org.in/ios/auth.php',
                     //$.ajax({url: 'http://192.168.0.101:80/schoolaccess.org.in/ios/auth.php',
                     $.ajax({url: 'http://schoolaccess.org.in/ios/auth.php',
-                    data: {action : 'authorization', deviceid: userHandler.appid, gcmid: userHandler.gcmid, formData : $('#check-user').serialize()},
+                    data: {action : 'authorization', deviceid: userHandler.appid, gcmid: userHandler.gcmid, wpnid: arung222, formData : $('#check-user').serialize()},
                     type: 'post',
                     async: 'true',
                     dataType: 'json',
@@ -284,6 +284,7 @@ $(document).on('pagecontainershow', function (e, ui) {
             //} 
             //if($('#username').val().length === 0 || $('#password').val().length === 0) {
                 alert('Please fill all necessary fields');
+                e.preventDefault();
             } 
            
             return false; // cancel original event to prevent form submitting
