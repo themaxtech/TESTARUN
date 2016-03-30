@@ -223,13 +223,13 @@ $(document).on('pagecontainershow', function (e, ui) {
                 userHandler.appid = $.jStorage.get("appid"); 
                 //userHandler.gcmid = $.jStorage.get("gcmid"); 
                 //userHandler.wpnid = $.jStorage.get("wpnid"); 
-                // Send data to server through the Ajax call
-                // action is functionality we want to call and outputJSON is our data
+                //Send data to server through the Ajax call
+                //action is functionality we want to call and outputJSON is our data
                     //$.ajax({url: 'http://schoolaccess.org.in/ios/auth.php',
                     //$.ajax({url: 'http://192.168.0.101:80/schoolaccess.org.in/ios/auth.php',
                     $.ajax({url: 'http://schoolaccess.org.in/ios/auth.php',
-                    data: {action : 'authorization', deviceid: userHandler.appid, gcmid: userHandler.gcmid, wpnid: arung222, formData : $('#check-user').serialize()},
-                    type: 'post',                  
+                    data: {action : 'authorization', deviceid: userHandler.appid, gcmid: userHandler.gcmid, formData : $('#check-user').serialize()},
+                    type: 'post',
                     async: 'true',
                     dataType: 'json',
                     beforeSend: function() {
