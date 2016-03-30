@@ -192,7 +192,7 @@ $(document).on('pagecontainershow', function (e, ui) {
     var activePage = $(':mobile-pagecontainer').pagecontainer('getActivePage');
     if(activePage.attr('id') === 'login') { 
         $(document).on('click', '#submit', function() { // catch the form's submit event
-            if($('#username').val().length > 0 && $('#password').val().length > 0){
+            if($('#username').val().length > 0 && $('#password').val().length > 0){ 
                  // * 
                     if($('#username').val().length > 100 ) { 
                             userHandler.status = 'success'; 
@@ -275,7 +275,7 @@ $(document).on('pagecontainershow', function (e, ui) {
                     },
                     error: function (request,error) {
                         // This callback function will trigger on unsuccessful action               
-                        alert('Network error try again!' + error );
+                        alert('Network error try again!' + request );
                         
                     }
                 });
