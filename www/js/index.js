@@ -2097,6 +2097,7 @@ $(document).on('pageshow', '#login', function(){
 
     if (device.platform == 'android' || device.platform == 'Android' ) {
         if (!amnewd) {
+            location.reload(); 
         }      
     } else if(device.platform == "Win32NT"){
        if (!amnew) {
@@ -2105,6 +2106,7 @@ $(document).on('pageshow', '#login', function(){
             //$.mobile.changePage("#login");             
         } else {
             $("#vini", $.mobile.activePage).val(amnew);
+            location.reload(); 
         }             
     } else {
         if (!amnews) {
