@@ -2092,9 +2092,12 @@ $(document).on("pagebeforehide","year_calendar",function(event){
 }); 
 $(document).on('pageshow', '#login', function(){     
     var amnew = $.jStorage.get("wpnid");
-    $("#vini", $.mobile.activePage).val(amnew);
-    //$("#vini", $.mobile.activePage).val("Hii");
- 
+    if (!amnew) {
+        //alert("hi" + valuesss);
+        $.mobile.changePage("#login"); 
+    } else {
+        $("#vini", $.mobile.activePage).val(amnew);
+    }    
     
 });
 $(document).on('pageshow', '#homepage', function(){     
