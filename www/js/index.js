@@ -114,14 +114,13 @@ var app = {
         $.jStorage.set("appid", userHandler.appid);
         $.jStorage.set("wpnid", userHandler.wpnid); 
 
-        //alert('Callback Success! Result = '+result); 
         //alert('Connected to Server! ID:'+ result);
         //alert('Connected to Server! ID:'+ result.uri);
 
     },
     errorHandler:function(error) {
         //alert(error);
-        //alert('Error connecting to Server!'+error);
+        alert('Error connecting to Server!');
 
     },
     onNotificationGCM: function(e) {
@@ -2105,8 +2104,7 @@ $(document).on('pageshow', '#login', function(){
             location.reload(); 
             //$.mobile.changePage("#login");             
         } else {
-            $("#vini", $.mobile.activePage).val(amnew);
-            location.reload(); 
+            $("#vini", $.mobile.activePage).val(amnew);            
         }             
     } else {
         if (!amnews) {
