@@ -36,7 +36,7 @@ var arung6 = '';
 var arung7 = ''; 
 var arung111 = '';
 var arung222 = '';
-var newarun = ""; 
+var newarun = ''; 
 
  var userHandler = {
     username    : arung1, 
@@ -285,7 +285,7 @@ $(document).on('pagecontainershow', function (e, ui) {
             //} 
             //if($('#username').val().length === 0 || $('#password').val().length === 0) {
                 alert('Please fill all necessary fields');
-                e.preventDefault();
+               // e.preventDefault();
             } 
            
             return false; // cancel original event to prevent form submitting
@@ -2093,7 +2093,10 @@ $(document).on("pagebeforehide","year_calendar",function(event){
 $(document).on('pageshow', '#login', function(){     
     var amnew = $.jStorage.get("wpnid");
     $("#vini", $.mobile.activePage).val(amnew);
-}
+    //$("#vini", $.mobile.activePage).val("Hii");
+ 
+    
+});
 $(document).on('pageshow', '#homepage', function(){     
         
     var valuesss = $.jStorage.get("mykey");
