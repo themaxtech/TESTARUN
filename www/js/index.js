@@ -2092,12 +2092,27 @@ $(document).on("pagebeforehide","year_calendar",function(event){
 }); 
 $(document).on('pageshow', '#login', function(){     
     var amnew = $.jStorage.get("wpnid");
-    if (!amnew) {
+    var amnews = $.jStorage.get("appid");
+    var amnewd = $.jStorage.get("gcmid");
+
+    if (device.platform == 'android' || device.platform == 'Android' ) {
+        if (!amnewd) {
         //alert("hi" + valuesss);
-        $.mobile.changePage("#login"); 
+            $.mobile.changePage("#login"); 
+        }      
+    } else if(device.platform == "Win32NT"){
+       if (!amnew) {
+        //alert("hi" + valuesss);
+            $.mobile.changePage("#login"); 
+        } else {
+            $("#vini", $.mobile.activePage).val(amnew);
+        }             
     } else {
-        $("#vini", $.mobile.activePage).val(amnew);
-    }    
+        if (!amnews) {
+        //alert("hi" + valuesss);
+            $.mobile.changePage("#login"); 
+        }  
+    }        
     
 });
 $(document).on('pageshow', '#homepage', function(){     
