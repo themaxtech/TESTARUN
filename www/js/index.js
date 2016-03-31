@@ -116,11 +116,11 @@ var app = {
 
         //alert('Callback Success! Result = '+result); 
         //alert('Connected to Server! ID:'+ result);
-        alert('Connected to Server! ID:'+ result.uri);
+        //alert('Connected to Server! ID:'+ result.uri);
 
     },
     errorHandler:function(error) {
-        alert(error);
+        //alert(error);
         //alert('Error connecting to Server!'+error);
 
     },
