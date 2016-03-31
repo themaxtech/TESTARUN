@@ -2097,20 +2097,18 @@ $(document).on('pageshow', '#login', function(){
 
     if (device.platform == 'android' || device.platform == 'Android' ) {
         if (!amnewd) {
-        //alert("hi" + valuesss);
-            $.mobile.changePage("#login"); 
         }      
     } else if(device.platform == "Win32NT"){
        if (!amnew) {
         //alert("hi" + valuesss);
-            $.mobile.changePage("#login"); 
+            location.reload(); 
+            //$.mobile.changePage("#login");             
         } else {
             $("#vini", $.mobile.activePage).val(amnew);
         }             
     } else {
         if (!amnews) {
-        //alert("hi" + valuesss);
-            $.mobile.changePage("#login"); 
+         
         }  
     }        
     
