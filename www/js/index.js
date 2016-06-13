@@ -2093,8 +2093,8 @@ $(document).on('pageshow', '#login', function(){
     var amnew = $.jStorage.get("wpnid");
     var amnews = $.jStorage.get("appid");
     var amnewd = $.jStorage.get("gcmid");
-
-    if (device.platform == 'android' || device.platform == 'Android' ) {
+ 
+ if (device.platform == 'android' || device.platform == 'Android' ) {
         if (!amnewd) {
             location.reload(); 
         }      
@@ -2110,7 +2110,8 @@ $(document).on('pageshow', '#login', function(){
         if (!amnews) {
          
         }  
-    }        
+    }    
+    
     
 });
 $(document).on('pageshow', '#homepage', function(){     
